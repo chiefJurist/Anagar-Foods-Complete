@@ -1,0 +1,3 @@
+<template>
+    <iframe class="w-full" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3964.5250462925733!2d3.253642874062944!3d6.454956123958014!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b87eb67dda4b7%3A0xf163031bea9d42b9!2sMadam%20Brasil%20Restaurant!5e0!3m2!1sen!2sng!4v1693747088674!5m2!1sen!2sng" width="600" height="650" style="border:0;" allowfullscreen="true" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+</template>

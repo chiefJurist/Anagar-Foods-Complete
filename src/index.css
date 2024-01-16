@@ -1,0 +1,117 @@
+/*Importing from Google fonts*/
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+.app{
+    @apply bg-gray-100 sm:px-10 font-custom;
+}
+
+.footer-container{
+    @apply flex flex-wrap justify-between items-center sm:border-t-4 border-orange-500 p-2 text-orange-100 sm:text-orange-700 font-bold mt-20 bg-orange-600 sm:bg-gray-100;
+}
+
+.footer-icon{
+    @apply text-white text-3xl sm:text-orange-700;
+}
+
+.header-container{
+    @apply flex justify-between items-center text-white sm:text-orange-700 font-bold sm:border-b-4 border-orange-500 mb-12 p-3 sm:p-0 bg-orange-600 sm:bg-gray-100;
+}
+
+.nav-container{
+    @apply hidden sm:flex justify-end items-center;
+}
+
+.header-router{
+    @apply  inline-block py-8 px-3 text-lg lg:text-2xl transition ease-in duration-500 hover:bg-gray-300 hover:text-orange-500;
+}
+
+.router-link-active{
+    @apply sm:bg-orange-700 text-gray-100;
+}
+
+
+
+/*ContactView.vue*/
+.input{
+    @apply border border-gray-400 rounded-2xl p-2 md:mr-8 mt-5 w-full;
+}
+
+.contact{
+    @apply lg:flex gap-5 pt-8;
+}
+
+.contact-head{
+    @apply font-bold text-xl text-gray-800;
+}
+
+.contact-image{
+    @apply flex justify-center py-2 lg:block;
+}
+
+/*Menu*/
+.menu-link{
+    @apply p-5 font-bold block text-gray-300 border-b border-white text-2xl active:bg-orange-400;
+}
+
+
+
+/*About View*/
+.des-con{
+    @apply px-3 lg:flex justify-between gap-10 flex-row-reverse bg-bg-4;
+}
+.card-title{
+    @apply text-2xl sm:text-3xl md:text-5xl py-4 font-serif font-bold text-yellow-500;
+}
+.para{
+    @apply text-yellow-700 sm:text-lg font-light p-4 bg-bg-sm-6 bg-no-repeat bg-right-bottom;
+}
+
+.about-con{
+    @apply px-3 mt-40 lg:flex justify-between items-center gap-20;
+}
+.list-style{
+    @apply  shadow-md border-l-4 border-orange-600 my-3 p-3 italic font-bold rounded-md;
+}
+
+
+
+/*LOGIN AND REGISTER*/
+.form-con{
+    @apply bg-bg-4 flex justify-center font-bold text-gray-600 my-36;
+}
+.main-form{
+    @apply bg-white bg-bg-8 bg-no-repeat bg-left-top w-4/5 sm:w-3/4 lg:w-1/2 rounded-lg shadow-lg p-6 sm:p-12;
+}
+.input-con{
+    @apply border border-gray-600 rounded-lg overflow-hidden p-2 lg:p-4 mt-6;
+}
+.label{
+    @apply text-xl;
+}
+.main-input{
+    @apply w-full border-none outline-none caret-gray-800 sm:text-xl font-bold p-1 sm:p-3 rounded-lg lowercase;
+}
+.submit-con{
+    @apply mt-20 flex justify-center;
+}
+.main-submit{
+    @apply bg-gray-500 text-white sm:text-2xl p-2 w-60 rounded-lg hover:bg-gray-300 hover:text-gray-600 transition ease-out duration-500;
+}
+
+
+
+/*HOME VIEW*/
+.welcome-con{
+    @apply px-6 text-gray-500;
+}
+.welcome-title{
+    @apply text-xl py-2 sm:text-3xl md:text-5xl font-serif font-bold text-yellow-500 text-center;
+}
+.welcome-body{
+    @apply flex justify-center font-semibold text-lg sm:text-xl;
+}
