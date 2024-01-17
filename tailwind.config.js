@@ -20,6 +20,10 @@ module.exports = {
         'src/views/HomeView.vue',
         'src/components/Home/Welcome.vue',
         'src/components/Home/ImagesDisplay.vue',
+
+        //AFTER THE USER HAS LOGGED IN
+        'src/components/Session/Header2.vue',
+        'src/components/Session/Menu2.vue'
     ],
     theme: {
         extend: {

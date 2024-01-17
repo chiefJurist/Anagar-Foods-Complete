@@ -30,9 +30,9 @@
     @apply  inline-block py-8 px-3 text-lg lg:text-2xl transition ease-in duration-500 hover:bg-gray-300 hover:text-orange-500;
 }
 
-.router-link-active{
+/* .router-link-active{
     @apply sm:bg-orange-700 text-gray-100;
-}
+} */
 
 
 
@@ -115,3 +115,7 @@
 .welcome-body{
     @apply flex justify-center font-semibold text-lg sm:text-xl;
 }
+
+
+
+/*AFTER THE USER HAS LOGGED IN*/
