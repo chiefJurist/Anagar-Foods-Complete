@@ -14,13 +14,17 @@
         data() {
             return{
                 showMenu: false,
-                session:true
+                showMenu2: false,
+                session: true
             }
         },
 
         methods: {
             toggleShowMenu() {
                 this.showMenu = !this.showMenu
+            },
+            toggleShowMenu2(){
+                this.showMenu2 = !this.showMenu2
             }
         }
     }
@@ -36,7 +40,8 @@
 
     <!--After The User Has Logged In-->
     <Teleport to="#session" v-if="session">
-        <Header2></Header2>
+        <Header2 :showMenu2="showMenu2" @control2="toggleShowMenu2"></Header2>
+        <Menu2 :showMenu2="showMenu2" @control2="toggleShowMenu2"></Menu2>
         <RouterView></RouterView>
         <Footer></Footer>
     </Teleport>

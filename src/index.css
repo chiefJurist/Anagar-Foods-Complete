@@ -119,3 +119,6 @@
 
 
 /*AFTER THE USER HAS LOGGED IN*/
+.session-menu-links{
+    @apply flex items-end text-2xl p-2 border-b-2 border-yellow-400 hover:bg-orange-800;
+}

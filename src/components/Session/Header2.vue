@@ -1,7 +1,17 @@
+<script>
+    export default {
+        methods: {
+            toggle2(){
+                this.$emit('control2')
+            }
+        }
+    }
+</script>
+
 <template>
-    <div class=" flex justify-between px-8 bg-gray-600 items-center">
+    <div class=" flex justify-between px-8 bg-white py-2 border-b-4 border-orange-600 items-center">
         <div>
-            <ion-icon name="menu-outline" class=" text-4xl text-red-500 cursor-pointer"></ion-icon>
+            <ion-icon name="menu-outline" class=" text-4xl text-orange-600 cursor-pointer" @click="toggle2"></ion-icon>
         </div>
 
         <div>
@@ -9,7 +19,7 @@
         </div>
 
         <div>
-            <ion-icon name="person-circle-outline" class=" text-4xl text-red-500 cursor-pointer"></ion-icon>
+            <ion-icon name="person-circle-outline" class=" text-4xl text-orange-600 cursor-pointer"></ion-icon>
         </div>
     </div>
 </template>
