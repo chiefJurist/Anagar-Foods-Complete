@@ -33,6 +33,33 @@ const router = createRouter({
             path: '/register',
             name: 'Register',
             component: () => import('../views/RegisterView.vue')
+        },
+
+        //AFTER LOGGING IN
+        {
+            path: '/dashboard',
+            name: 'Dashboard',
+            component: () => import('../views/session/DashboardView.vue')
+        },
+        {
+            path: '/create',
+            name: 'Create',
+            component: () => import('../views/session/CreateView.vue')
+        },
+        {
+            path: '/settings',
+            name: 'Settings',
+            component: () => import('../views/session/SettingsView.vue')
+        },
+        {
+            path: '/notification',
+            name: 'Notification',
+            component: () => import('../views/session/NotificationView.vue')
+        },
+        {
+            path: '/history',
+            name: 'History',
+            component: () => import('../views/session/HistoryView.vue')
         }
     ]
 })
