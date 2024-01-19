@@ -2,13 +2,13 @@
 module.exports = {
     content: [
         'src/App.vue',
-        'src/components/Header.vue',
-        'src/components/Footer.vue',
+        'src/components/Navigation/Header.vue',
+        'src/components/Navigation/Footer.vue',
         'src/views/ContactView.vue',
         'src/components/Contact/ContactMap.vue',
         'src/components/Contact/ContactMessage.vue',
         'src/components/Contact/ContactNav.vue',
-        'src/components/Menu.vue',
+        'src/components/Navigation/Menu.vue',
         'src/views/LoginView.vue',
         'src/views/RegisterView.vue',
         'src/views/AboutView.vue',
@@ -22,9 +22,9 @@ module.exports = {
         'src/components/Home/ImagesDisplay.vue',
 
         //AFTER THE USER HAS LOGGED IN
-        'src/components/Session/Header2.vue',
-        'src/components/Session/Menu2.vue',
-        'src/components/Session/Menu2.vue'
+        'src/components/Session/Navigation/Header2.vue',
+        'src/components/Session/Navigation/Menu2.vue',
+        'src/components/Session/Dashboard/Welcome2.vue'
     ],
     theme: {
         extend: {

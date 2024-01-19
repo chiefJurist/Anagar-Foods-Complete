@@ -1,12 +1,12 @@
 <script>
     import { RouterView } from 'vue-router'
-    import Header from './components/Header.vue';
-    import Footer from './components/Footer.vue';
-    import Menu from './components/Menu.vue';
+    import Header from './components/Navigation/Header.vue';
+    import Footer from './components/Navigation/Footer.vue';
+    import Menu from './components/Navigation/Menu.vue';
     
     //FOR THE LOGIN PART
-    import Header2 from './components/Session/Header2.vue';
-    import Menu2 from './components/Session/Menu2.vue';
+    import Header2 from './components/Session/Navigation/Header2.vue';
+    import Menu2 from './components/Session/Navigation/Menu2.vue';
 
     export default{
         components: { Header, Footer, Menu, Header2, Menu2},
