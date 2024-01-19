@@ -23,6 +23,7 @@ module.exports = {
 
         //AFTER THE USER HAS LOGGED IN
         'src/components/Session/Header2.vue',
+        'src/components/Session/Menu2.vue',
         'src/components/Session/Menu2.vue'
     ],
     theme: {

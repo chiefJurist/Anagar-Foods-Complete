@@ -39,27 +39,27 @@ const router = createRouter({
         {
             path: '/dashboard',
             name: 'Dashboard',
-            component: () => import('../views/session/DashboardView.vue')
+            component: () => import('../views/DashboardView.vue')
         },
         {
             path: '/create',
             name: 'Create',
-            component: () => import('../views/session/CreateView.vue')
+            component: () => import('../views/CreateView.vue')
         },
         {
             path: '/settings',
             name: 'Settings',
-            component: () => import('../views/session/SettingsView.vue')
+            component: () => import('../views/SettingsView.vue')
         },
         {
             path: '/notification',
             name: 'Notification',
-            component: () => import('../views/session/NotificationView.vue')
+            component: () => import('../views/NotificationView.vue')
         },
         {
             path: '/history',
             name: 'History',
-            component: () => import('../views/session/HistoryView.vue')
+            component: () => import('../views/HistoryView.vue')
         }
     ]
 })
