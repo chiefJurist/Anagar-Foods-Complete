@@ -125,3 +125,23 @@
 .session-empty{
     @apply italic text-4xl text-gray-400 text-center py-60;
 }
+
+/*For History and Notification*/
+.session-history-container{
+    @apply pb-40 flex justify-center;
+}
+.session-record-container{
+    @apply bg-white shadow-lg rounded-md w-5/6 sm:w-3/4 p-4 sm:p-10 border-l-4 border-yellow-500 mb-10;
+}
+.session-history-date{
+    @apply italic font-light text-orange-400;
+}
+.session-history-date-container{
+    @apply flex justify-between items-center;
+}
+.session-history-progress{
+    @apply font-bold text-orange-600 text-lg;
+}
+.session-history-details{
+    @apply  font-sans sm:text-2xl text-yellow-500;
+}
