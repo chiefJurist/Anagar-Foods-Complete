@@ -4,14 +4,20 @@
     import Order from "../components/Session/Dashboard/Order.vue";
 
     export default{
-        components: { Welcome2, Empty, Order }
+        components: { Welcome2, Empty, Order },
+
+        data () {
+            return {
+                dashboard: true
+            }
+        }
     }
 </script>
 
 <template>
-    <div class=" mx-5 md:mx-9">
+    <div class=" mx-5 md:mx-9 bg-bg-4">
         <Welcome2></Welcome2>
-        <Empty></Empty>
+        <Empty  v-if="!dashboard"></Empty>
         <Order></Order>
     </div>
 </template>
