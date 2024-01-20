@@ -1,14 +1,13 @@
 <script>
     import Welcome2 from "../components/Session/Dashboard/Welcome2.vue";
+    import Empty from "../components/Session/Dashboard/Empty.vue";
 
     export default{
-        components: {Welcome2}
+        components: { Welcome2, Empty}
     }
 </script>
 
 <template>
-    <div class=" pt-14 px-5">
-        <Welcome2></Welcome2>
-    </div>
-    
+    <Welcome2></Welcome2>
+    <Empty></Empty>
 </template>

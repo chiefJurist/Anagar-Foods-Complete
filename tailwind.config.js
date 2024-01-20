@@ -25,7 +25,8 @@ module.exports = {
         'src/views/DashboardView.vue',
         'src/components/Session/Navigation/Header2.vue',
         'src/components/Session/Navigation/Menu2.vue',
-        'src/components/Session/Dashboard/Welcome2.vue'
+        'src/components/Session/Dashboard/Welcome2.vue',
+        'src/components/Session/Dashboard/Empty.vue',
     ],
     theme: {
         extend: {
