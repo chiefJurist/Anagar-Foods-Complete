@@ -8,7 +8,7 @@
 
         data () {
             return {
-                dashboard: true
+                dashboard: false
             }
         }
     }
@@ -18,6 +18,6 @@
     <div class=" mx-5 md:mx-9 bg-bg-4">
         <Welcome2></Welcome2>
         <Empty  v-if="!dashboard"></Empty>
-        <Order></Order>
+        <Order v-if="dashboard"></Order>
     </div>
 </template>

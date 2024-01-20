@@ -23,11 +23,15 @@ module.exports = {
 
         //AFTER THE USER HAS LOGGED IN
         'src/views/DashboardView.vue',
+        'src/views/NotificationView.vue',
         'src/components/Session/Navigation/Header2.vue',
         'src/components/Session/Navigation/Menu2.vue',
         'src/components/Session/Dashboard/Welcome2.vue',
         'src/components/Session/Dashboard/Empty.vue',
         'src/components/Session/Dashboard/Order.vue',
+        'src/components/Session/Notification/Title.vue',
+        'src/components/Session/Notification/Empty.vue',
+        'src/components/Session/Notification/Info.vue',
     ],
     theme: {
         extend: {

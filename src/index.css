@@ -123,5 +123,5 @@
     @apply flex items-end text-2xl p-2 border-b-2 border-yellow-400 hover:bg-orange-800;
 }
 .session-empty{
-    @apply italic text-4xl text-gray-200 text-center py-24;
+    @apply italic text-4xl text-gray-400 text-center py-60;
 }
