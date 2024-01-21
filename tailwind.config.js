@@ -25,6 +25,7 @@ module.exports = {
         'src/views/DashboardView.vue',
         'src/views/NotificationView.vue',
         'src/views/HistoryView.vue',
+        'src/views/DetailsView.vue',
         'src/components/Session/Navigation/Header2.vue',
         'src/components/Session/Navigation/Menu2.vue',
         'src/components/Session/Dashboard/Welcome2.vue',

@@ -8,7 +8,7 @@
 
         data () {
             return {
-                dashboard: false
+                dashboard: true
             }
         }
     }

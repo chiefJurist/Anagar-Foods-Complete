@@ -9,6 +9,10 @@
             <li>Stew</li>
             <li>White rice</li>
         </ul>
-        <div class=" my-8 py-5 border-t-2 border-orange-600 text-yellow-400 font-bold text-lg cursor-pointer hover:text-yellow-700">More Info</div>
+        <RouterLink :to="{ name: 'Details' }">
+            <div class=" my-8 py-5 border-t-2 border-orange-600 text-yellow-400 font-bold text-lg cursor-pointer hover:text-yellow-700">
+                More Info
+            </div>
+        </RouterLink>
     </div>
 </template>
