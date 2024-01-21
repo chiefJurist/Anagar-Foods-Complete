@@ -145,3 +145,12 @@
 .session-history-details{
     @apply  font-sans sm:text-2xl text-yellow-500;
 }
+.session-order-cont{
+    @apply text-2xl py-4;
+}
+.session-order-title{
+    @apply text-orange-600;
+}
+.session-order-main{
+    @apply capitalize text-yellow-400;
+}

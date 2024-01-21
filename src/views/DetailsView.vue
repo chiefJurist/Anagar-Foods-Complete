@@ -1,25 +1,30 @@
 <template>
-    <div>
-        <div>
-            <span>MAIN ORDER:</span>
-            <span></span>
+    <div class=" pt-28 pb-64 text-center bg-bg-5 font-extrabold">
+        <div class=" text-2xl sm:text-4xl py-7 font-serif">
+            <span class=" text-orange-600">MAIN ORDER: </span>
+            <span class=" capitalize text-yellow-400">FRIED RICE</span>
         </div>
-        <div>
-            <span>CREATED AT:</span>
-            <span></span>
+
+        <div class="session-order-cont">
+            <span class="session-order-title">CREATED AT: </span>
+            <span class="session-order-main">12/12/12</span>
         </div>
-        <div>
-            <span>TYPE:</span>
-            <span></span>
+
+        <div class="session-order-cont">
+            <span class="session-order-title">TYPE: </span>
+            <span class="session-order-main">INTERNATIONAL</span>
         </div>
-        <div>
-            <span>DELIVERY POINT:</span>
-            <span></span>
+
+        <div class="session-order-cont">
+            <span class="session-order-title">DELIVERY POINT: </span>
+            <span class="session-order-main">LAGOS, NIGERIA</span>
         </div>
-        <div>
-            <span>OTHER ORDERS:</span>
-            <span></span>
+
+        <div class="session-order-cont">
+            <span class="session-order-title">OTHER ORDERS: </span>
+            <span class="session-order-main">AKPU, STEW, WHITE RICE</span>
         </div>
-        <button>Cancel Order</button>
+
+        <button class=" mt-7 border-4 border-orange-600 p-3 rounded-md font-bold bg-yellow-300 text-orange-600 hover:bg-yellow-600 hover:text-orange-300 transform transition ease-out duration-500">Cancel Order</button>
     </div>
 </template>
