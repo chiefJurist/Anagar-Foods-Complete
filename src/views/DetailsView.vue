@@ -25,6 +25,6 @@
             <span class="session-order-main">AKPU, STEW, WHITE RICE</span>
         </div>
 
-        <button class=" mt-7 border-4 border-orange-600 p-3 rounded-md font-bold bg-yellow-300 text-orange-600 hover:bg-yellow-600 hover:text-orange-300 transform transition ease-out duration-500">Cancel Order</button>
+        <button class=" mt-7 session-btn">Cancel Order</button>
     </div>
 </template>

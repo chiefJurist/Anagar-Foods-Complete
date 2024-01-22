@@ -26,6 +26,7 @@ module.exports = {
         'src/views/NotificationView.vue',
         'src/views/HistoryView.vue',
         'src/views/DetailsView.vue',
+        'src/views/SettingsView.vue',
         'src/components/Session/Navigation/Header2.vue',
         'src/components/Session/Navigation/Menu2.vue',
         'src/components/Session/Dashboard/Welcome2.vue',
@@ -37,6 +38,9 @@ module.exports = {
         'src/components/Session/History/Title.vue',
         'src/components/Session/History/Empty.vue',
         'src/components/Session/History/Record.vue',
+        'src/components/Session/Settings/Title.vue',
+        'src/components/Session/Settings/Body.vue',
+        'src/components/Session/Settings/Logout.vue',
     ],
     theme: {
         extend: {
