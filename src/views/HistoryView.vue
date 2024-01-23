@@ -15,7 +15,7 @@
 </script>
 
 <template>
-    <div class=" bg-bg-7 mx-5">
+    <div class=" bg-bg-7">
         <Title v-if="history"></Title>
         <Empty v-if="!history"></Empty>
         <Record v-if="history"></Record>
