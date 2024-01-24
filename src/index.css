@@ -128,10 +128,10 @@
 
 /*For History and Notification*/
 .session-history-container{
-    @apply pb-40 flex justify-center;
+    @apply pb-40 ml-9 sm:ml-16 md:ml-24;
 }
 .session-record-container{
-    @apply bg-white shadow-lg rounded-md w-5/6 sm:w-3/4 p-4 sm:p-10 border-l-4 border-yellow-500 mb-10;
+    @apply bg-white shadow-lg rounded-md w-11/12 sm:w-11/12 p-4 sm:p-10 border-l-4 border-yellow-500 mb-10;
 }
 .session-history-date{
     @apply italic font-light text-orange-400;
@@ -153,4 +153,16 @@
 }
 .session-order-main{
     @apply capitalize text-yellow-400;
+}
+.session-btn{
+    @apply border-4 border-orange-600 p-3 rounded-md font-bold bg-yellow-300 text-orange-600 hover:bg-yellow-600 hover:text-orange-300 transform transition ease-out duration-500;
+}
+.session-create-select{
+    @apply  border border-gray-400 text-sm sm:text-xl p-2 rounded-lg font-semibold outline-none w-11/12 md:w-2/3 text-yellow-400;
+}
+.session-input-label{
+    @apply text-xl sm:text-2xl font-semibold;
+}
+.session-input{
+    @apply outline-none border border-gray-400 w-11/12 md:w-2/3 p-1 rounded-lg;
 }

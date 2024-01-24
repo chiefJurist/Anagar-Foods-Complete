@@ -19,7 +19,9 @@
         </div>
 
         <div>
-            <ion-icon name="person-circle-outline" class=" text-4xl text-orange-600 cursor-pointer"></ion-icon>
+            <router-link :to="{name: 'Edit'}">
+                <ion-icon name="person-circle-outline" class=" text-4xl text-orange-600 cursor-pointer"></ion-icon>
+            </router-link>
         </div>
     </div>
 </template>

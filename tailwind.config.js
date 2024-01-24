@@ -26,6 +26,8 @@ module.exports = {
         'src/views/NotificationView.vue',
         'src/views/HistoryView.vue',
         'src/views/DetailsView.vue',
+        'src/views/SettingsView.vue',
+        'src/views/CreateView.vue',
         'src/components/Session/Navigation/Header2.vue',
         'src/components/Session/Navigation/Menu2.vue',
         'src/components/Session/Dashboard/Welcome2.vue',
@@ -37,6 +39,12 @@ module.exports = {
         'src/components/Session/History/Title.vue',
         'src/components/Session/History/Empty.vue',
         'src/components/Session/History/Record.vue',
+        'src/components/Session/Settings/Title.vue',
+        'src/components/Session/Settings/Body.vue',
+        'src/components/Session/Settings/Logout.vue',
+        'src/components/Session/Create/International.vue',
+        'src/components/Session/Create/Local.vue',
+        'src/components/Session/Create/Country.vue'
     ],
     theme: {
         extend: {
@@ -62,6 +70,7 @@ module.exports = {
                 'bg-sm-4': "url('/img/bg-sm-4.png')",
                 'bg-sm-5': "url('/img/bg-sm-5.png')",
                 'bg-sm-6': "url('/img/bg-sm-6.png')",
+                'food-bg': "url('/img/img-5.jpg')"
             }
         },
     },
