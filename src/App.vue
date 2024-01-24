@@ -15,7 +15,7 @@
             return{
                 showMenu: false,
                 showMenu2: false,
-                session: true
+                session: false
             }
         },
 
