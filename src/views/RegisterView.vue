@@ -14,7 +14,7 @@
                 passwordError: "",
                 usageError: "",
                 termsError: "",
-                reponse: ""
+                response: ""
             }
         },
 
@@ -52,6 +52,8 @@
                 for (const user of this.users) {
                     if (user.username == this.username) {
                         this.usernameError = "Username is Taken"
+                    }else if (this.username.length < 3) {
+                        this.usernameError = "Username Should Be At Least Three Characters"
                     }
                 }
 
@@ -89,8 +91,12 @@
                     .then((res) => res.json())
                     .then((data2) => {
                             // Handle the response from the server
-                            this.reponse = data2;
-                            //console.log("Received data from server:", data);
+                            this.response = data2;
+                            if (this.response.status == "success") {
+                                setTimeout(() => {
+                                    this.$router.push({ name: "Login" })
+                                }, 3000)
+                            }
                     })
                     .catch((err) => console.error(err));
                 }
@@ -102,6 +108,10 @@
 <template>
     <div class="form-con">
         <form @submit.prevent="validateForm" class="main-form" method="POST" action="../../data/register2.php">
+            <div v-if="response.status == 'success'" class=" text-center font-semibold text-2xl text-green-600 uppercase">
+                {{ response.message }} You Will Be Redirected Soon
+            </div>
+
             <div class="input-con">
                 <label class="label"> New Email:</label><br>
                 <input type="email" placeholder="input new email" class="main-input" required v-model="email" @keydown="clearError">
@@ -135,8 +145,8 @@
                 <div class="error"> {{ usageError }} </div>
             </div>
 
-            <div class=" mt-10">
-                <input type="checkbox" required v-model="terms">
+            <div class=" mt-10 text-center">
+                <input type="checkbox" required v-model="terms" class=" mr-5">
                 <label>Accept terms and conditions</label>
                 <div class="error">  {{ termsError }} </div>
             </div>
