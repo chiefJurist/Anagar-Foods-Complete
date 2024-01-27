@@ -13,7 +13,8 @@
                 usernameError: "",
                 passwordError: "",
                 usageError: "",
-                termsError: ""
+                termsError: "",
+                reponse: ""
             }
         },
 
@@ -22,7 +23,7 @@
             //Fetching The Response
             .then((response) => response.json())
 
-            //Fetching The Actual Data and Populating The Jobs Property
+            //Fetching The Actual Data and Populating The Users Property
             .then((data) => {
                 console.log("Received data:", data);
                 this.users = data
@@ -33,6 +34,11 @@
         },
 
         methods: {
+            //CLEARING THE ERROR
+            clearError(){
+                this.usernameError = this.emailError = this.passwordError = "";
+            },
+
             //VALIDATE FORM
             validateForm() {
                 //Validate Email
@@ -55,11 +61,39 @@
                 } else if (this.password.length < 8) {
                     this.passwordError = "Password should be at least 8 characters long";
                 }
-            },
 
-            //CLEARING THE ERROR
-            clearError(){
-                this.usernameError = this.emailError = this.passwordError = "";
+
+
+                //SAVING IN THE DATABASE IF THERE IS NO ERROR
+                if (
+                    !this.emailError &&
+                    !this.usernameError &&
+                    !this.passwordError &&
+                    !this.usageError &&
+                    !this.termsError
+                ) {
+                    //Proceed If There Are No Errors
+                    fetch("http://localhost/Anagar-Foods-Complete/data/register2.php", {
+                        method: "POST",
+                        headers: {
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            email: this.email,
+                            username: this.username,
+                            password: this.password,
+                            usage: this.usage,
+                            terms: this.terms,
+                        }),
+                    })
+                    .then((res) => res.json())
+                    .then((data2) => {
+                            // Handle the response from the server
+                            this.reponse = data2;
+                            //console.log("Received data from server:", data);
+                    })
+                    .catch((err) => console.error(err));
+                }
             }
         }
     }
@@ -67,7 +101,7 @@
 
 <template>
     <div class="form-con">
-        <form @submit.prevent="validateForm" class="main-form">
+        <form @submit.prevent="validateForm" class="main-form" method="POST" action="../../data/register2.php">
             <div class="input-con">
                 <label class="label"> New Email:</label><br>
                 <input type="email" placeholder="input new email" class="main-input" required v-model="email" @keydown="clearError">
