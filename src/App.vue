@@ -25,6 +25,10 @@
             },
             toggleShowMenu2(){
                 this.showMenu2 = !this.showMenu2
+            },
+            //For changing The Type Of Header And Menu to Display
+            changeHeader() {
+                this.session = !this.session
             }
         }
     }
@@ -32,17 +36,17 @@
 
 <template>
     <div class="app" v-if="!session">
-        <Header :showMenu="showMenu" @control ="toggleShowMenu" />
+        <Header @control ="toggleShowMenu" />
         <Menu :showMenu="showMenu" @control="toggleShowMenu" />
-	    <RouterView v-if="!showMenu" />
+	    <RouterView v-if="!showMenu" @control3="changeHeader"/>
         <Footer v-if="!showMenu" />
     </div>
 
     <!--After The User Has Logged In-->
     <Teleport to="#session" v-if="session">
-        <Header2 :showMenu2="showMenu2" @control2="toggleShowMenu2"></Header2>
+        <Header2 @control2="toggleShowMenu2"></Header2>
         <Menu2 :showMenu2="showMenu2" @control2="toggleShowMenu2"></Menu2>
-        <RouterView></RouterView>
+        <RouterView @control3="changeHeader"></RouterView>
         <Footer></Footer>
     </Teleport>
 </template>
