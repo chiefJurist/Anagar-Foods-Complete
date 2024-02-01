@@ -29,8 +29,18 @@
             //For changing The Type Of Header And Menu to Display
             changeHeader() {
                 this.session = !this.session
+                // Save the session state to localStorage
+                localStorage.setItem('session', JSON.stringify(this.session));
             }
-        }
+        },
+
+        mounted() {
+            // Retrieve session state from localStorage when the component is mounted
+            const storedSession = localStorage.getItem('session');
+            if (storedSession) {
+            this.session = JSON.parse(storedSession);
+            }
+        },
     }
 </script>
 
