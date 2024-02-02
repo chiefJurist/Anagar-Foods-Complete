@@ -89,7 +89,7 @@
     <Teleport to="#session" v-if="session">
         <Header2 @control2="toggleShowMenu2"></Header2>
         <Menu2 :showMenu2="showMenu2" @control2="toggleShowMenu2"></Menu2>
-        <RouterView @control3="changeHeader" @login-success="handleLoginSuccess"></RouterView>
+        <RouterView @control3="changeHeader" @login-success="handleLoginSuccess" :id="id" :email="email" :username="username" :type="type"></RouterView>
         <Footer></Footer>
     </Teleport>
 </template>

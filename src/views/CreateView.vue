@@ -6,6 +6,9 @@
     export default{
         components: { International, Local, Country },
 
+        //PASSING IN THE USERDATA PROPS FROM THE PARENT COMPONENT
+        props: ['id'],
+
         data () {
             return{
                 location: "",
@@ -18,9 +21,6 @@
                 country: "",
                 orderType: "",
                 response: "",
-
-                //FOR THE SESSION PART
-                id: ""
             }
         },
 
@@ -34,6 +34,7 @@
                         "Content-Type" : "application/json"
                     },
                     body: JSON.stringify({
+                        id: this.id,
                         location: this.location,
                         mainOrder: this.mainOrder,
                         additionalOrder: this.additionalOrder,
@@ -51,14 +52,13 @@
 
                 //populating the result property
                 .then((data) => {
-                    data = this.response;
-                    this.response = this.response.message
+                    this.response = data
 
                     //redirect if the order was created
                     if (this.response.status == "success") {
                         
                         setTimeout(() => {
-                            this.$router.push({ name: "Login" })
+                            this.$router.push({ name: "Dashboard" })
                         }, 3000)
                     }
                 })
@@ -70,7 +70,7 @@
 <template>
     <div class=" flex justify-center py-24 bg-bg-4">
         <form @submit.prevent="createOrder" action="" class=" w-3/4 shadow-lg border-2 border-orange-600 px-3 sm:py-7 py-10 text-center rounded-lg bg-food-bg text-orange-500">
-            <div v-if="response" class=" text-lg sm:text-2xl text-orange-500 font-bold"> {{ response }} </div>
+            <div v-if="response" class=" text-lg sm:text-2xl text-orange-500 font-bold"> {{ response.message }} </div>
             
             <div class=" text-2xl md:text-5xl font-serif text-orange-600 mb-12">Create Your Order</div>
 

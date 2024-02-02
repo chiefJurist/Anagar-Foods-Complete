@@ -2,13 +2,10 @@
     //INCLUDE THE DATABASE CONNECTION
     include("config.php");
 
-    //ALLOW CORS
+    // ALLOW CORS
     header("Access-Control-Allow-Origin: *");
-    header("Access-Control-Allow-Methods: POST, OPTIONS");
+    header("Access-Control-Allow-Methods: POST, GET, OPTIONS");
     header("Access-Control-Allow-Headers: Content-Type");
-
-    //START THE SESSION
-    session_start();
 
     //IF A POST REQUEST IS MADE
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
@@ -16,6 +13,7 @@
         $postData = json_decode(file_get_contents("php://input"));
 
         //Assigning The Postdata To Variables
+        $id = $conn->real_escape_string($postData->id);
         $location = $conn->real_escape_string($postData->location);
         $mainOrder = $conn->real_escape_string($postData->mainOrder);
         $additionalOrder = $conn->real_escape_string($postData->additionalOrder);
