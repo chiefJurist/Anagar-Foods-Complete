@@ -1,5 +1,17 @@
+<script>
+    //TWO WAY DATA BINDING SO THAT THE SELECTED ORDER WILL BE ACCESSIBLE FROM THE PARENT COMPONENT
+    //(You justnhave to return a a property bounded to the form)
+    export default {
+        data() {
+            return {
+                selected: ""
+            };
+        }
+    };
+</script>
+
 <template>
-    <select name="" id="" class="session-create-select">
+    <select class="session-create-select" v-model="selected">
         <option value="">Our Local Menu</option>
         <option value="Jollof Rice">Jollof Rice</option>
         <option value="Fried Rice">Fried Rice</option>

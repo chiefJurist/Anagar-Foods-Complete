@@ -23,3 +23,10 @@
     header('Content-Type: application/json');
 
     echo $jsonResult;
+
+    //Free Result From Memory
+    mysqli_free_result($result);
+
+    //Close Connection And Exit
+    mysqli_close($conn);
+    exit();

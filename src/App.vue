@@ -15,34 +15,81 @@
             return{
                 showMenu: false,
                 showMenu2: false,
-                session: false
+                session: false,
+                //FOR THE DATABASE SESSION
+                id: "",
+                email: "",
+                username: "",
+                type: ""
             }
         },
+
 
         methods: {
             toggleShowMenu() {
                 this.showMenu = !this.showMenu
             },
+
             toggleShowMenu2(){
                 this.showMenu2 = !this.showMenu2
+            },
+
+            //For changing The Type Of Header And Menu to Display
+            changeHeader() {
+                this.session = !this.session
+                // Save the session state to localStorage
+                localStorage.setItem('session', JSON.stringify(this.session));
+            },
+
+            //For Populating The Database Session
+            handleLoginSuccess(userData) {
+                // Handle the data passed from the child component
+                this.id = userData.id;
+                this.email = userData.email;
+                this.username = userData.username;
+                this.type = userData.type;
+
+                // Save user data to localStorage
+                //For Making Sure The userdata Values Are Not Changed When Page Is Refreshed
+                localStorage.setItem('user', JSON.stringify(userData));
+            },
+        },
+
+        
+        mounted() {
+            //For Making Sure The Session Value Is Not Changed When Page Is Refreshed
+            // Retrieve session state from localStorage when the component is mounted
+            const storedSession = localStorage.getItem('session');
+            if (storedSession) {
+                this.session = JSON.parse(storedSession);
             }
-        }
+
+            //For Making Sure The userdata Values Are Not Changed When Page Is Refreshed
+            const storedUser = localStorage.getItem('user');
+            if (storedUser) {
+                const userData = JSON.parse(storedUser);
+                this.id = userData.id;
+                this.email = userData.email;
+                this.username = userData.username;
+                this.type = userData.type;
+            }
+        },
     }
 </script>
 
 <template>
     <div class="app" v-if="!session">
-        <Header :showMenu="showMenu" @control ="toggleShowMenu" />
+        <Header @control ="toggleShowMenu" />
         <Menu :showMenu="showMenu" @control="toggleShowMenu" />
-	    <RouterView v-if="!showMenu" />
+	    <RouterView v-if="!showMenu" @control3="changeHeader"/>
         <Footer v-if="!showMenu" />
     </div>
 
     <!--After The User Has Logged In-->
     <Teleport to="#session" v-if="session">
-        <Header2 :showMenu2="showMenu2" @control2="toggleShowMenu2"></Header2>
+        <Header2 @control2="toggleShowMenu2"></Header2>
         <Menu2 :showMenu2="showMenu2" @control2="toggleShowMenu2"></Menu2>
-        <RouterView></RouterView>
+        <RouterView @control3="changeHeader"></RouterView>
         <Footer></Footer>
     </Teleport>
 </template>

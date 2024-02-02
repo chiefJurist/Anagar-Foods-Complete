@@ -1,5 +1,17 @@
+<script>
+    //TWO WAY DATA BINDING SO THAT THE SELECTED COUNTRY WILL BE ACCESSIBLE FROM THE PARENT COMPONENT
+    //(You justnhave to return a a property bounded to the form)
+    export default {
+        data() {
+            return {
+                selected: ""
+            };
+        }
+    };
+</script>
+
 <template>
-    <select id="country" name="country" class="session-input">
+    <select class="session-input" v-model="selected">
         <option value="">SELECT YOUR COUNTRY</option>
         <option value="Afghanistan">Afghanistan</option>
         <option value="Åland Islands">Åland Islands</option>
