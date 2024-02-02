@@ -54,6 +54,13 @@
                         //if the action was successful, redirect to dashboard
                         if (this.result.status == "success") {
                             this.change()
+                            // Emit an event with user data
+                            this.$emit("login-success", {
+                                id: this.result.id,
+                                email: this.result.email,
+                                username: this.result.username,
+                                type: this.result.type
+                            });
                             this.$router.push({ name: "Dashboard" })
                         }
                     }

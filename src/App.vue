@@ -15,30 +15,63 @@
             return{
                 showMenu: false,
                 showMenu2: false,
-                session: false
+                session: false,
+                //FOR THE DATABASE SESSION
+                id: "",
+                email: "",
+                username: "",
+                type: ""
             }
         },
+
 
         methods: {
             toggleShowMenu() {
                 this.showMenu = !this.showMenu
             },
+
             toggleShowMenu2(){
                 this.showMenu2 = !this.showMenu2
             },
+
             //For changing The Type Of Header And Menu to Display
             changeHeader() {
                 this.session = !this.session
                 // Save the session state to localStorage
                 localStorage.setItem('session', JSON.stringify(this.session));
-            }
+            },
+
+            //For Populating The Database Session
+            handleLoginSuccess(userData) {
+                // Handle the data passed from the child component
+                this.id = userData.id;
+                this.email = userData.email;
+                this.username = userData.username;
+                this.type = userData.type;
+
+                // Save user data to localStorage
+                //For Making Sure The userdata Values Are Not Changed When Page Is Refreshed
+                localStorage.setItem('user', JSON.stringify(userData));
+            },
         },
 
+        
         mounted() {
+            //For Making Sure The Session Value Is Not Changed When Page Is Refreshed
             // Retrieve session state from localStorage when the component is mounted
             const storedSession = localStorage.getItem('session');
             if (storedSession) {
-            this.session = JSON.parse(storedSession);
+                this.session = JSON.parse(storedSession);
+            }
+
+            //For Making Sure The userdata Values Are Not Changed When Page Is Refreshed
+            const storedUser = localStorage.getItem('user');
+            if (storedUser) {
+                const userData = JSON.parse(storedUser);
+                this.id = userData.id;
+                this.email = userData.email;
+                this.username = userData.username;
+                this.type = userData.type;
             }
         },
     }
