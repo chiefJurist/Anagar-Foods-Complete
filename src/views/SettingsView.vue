@@ -4,7 +4,13 @@
     import Logout from '../components/Session/Settings/Logout.vue';
 
     export default {
-        components:{ Title, Body, Logout }
+        components:{ Title, Body, Logout },
+
+        methods: {
+            logOutFunction(){
+                this.$emit("logOut")
+            }
+        }
     }
 </script>
 
@@ -12,6 +18,6 @@
     <div class=" bg-bg-5">
         <Title></Title>
         <Body></Body>
-        <Logout></Logout>
+        <Logout @logOut="logOutFunction"></Logout>
     </div>
 </template>
