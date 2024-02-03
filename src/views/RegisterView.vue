@@ -24,10 +24,7 @@
             .then((response) => response.json())
 
             //Fetching The Actual Data and Populating The Users Property
-            .then((data) => {
-                console.log("Received data:", data);
-                this.users = data
-            })
+            .then((data) => this.users = data)
             
             //Catching Errors
             .catch((error) => console.error("Error fetching data:", error));

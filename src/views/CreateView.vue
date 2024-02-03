@@ -129,7 +129,7 @@
                 </div>
                 <div v-if="location == 'Local'">
                     <label class="session-input-label">Country</label><br>
-                    <input type="text" class="session-input" value="Nigeria" readonly>
+                    <input type="text" class="session-input" value="Nigeria" v-model="country" readonly>
                 </div>
             </div>
 

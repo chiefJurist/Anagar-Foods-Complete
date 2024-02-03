@@ -62,9 +62,10 @@ const router = createRouter({
             component: () => import('../views/HistoryView.vue')
         },
         {
-            path: '/details',
+            path: '/dashboard/:orderId',
             name: 'Details',
-            component: () => import('../views/DetailsView.vue')
+            component: () => import('../views/DetailsView.vue'),
+            props: true
         },
         {
             path: '/edit',
