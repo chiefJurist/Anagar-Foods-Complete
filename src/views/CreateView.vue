@@ -6,27 +6,37 @@
     export default{
         components: { International, Local, Country },
 
+        //PASSING IN THE USERDATA PROPS FROM THE PARENT COMPONENT
+        props: ['id'],
+
         data () {
             return{
-                location: "",
-                mainOrder: "",
-                additionalOrder: "",
-                streetAddress: "",
-                zip: "",
-                city: "",
-                state: "",
-                country: "",
-                orderType: "",
-                response: "",
-
-                //FOR THE SESSION PART
-                id: ""
+                location : "",
+                mainOrder : "",
+                additionalOrder : "",
+                streetAddress : "",
+                zip : "",
+                city : "",
+                state : "",
+                country : "",
+                localCountry : "Nigeria",
+                orderType : "",
+                response : "",
             }
+        },
+
+        computed: {
+            //
         },
 
         methods: {
             //FORM VALIDATION AND SUBMISSION
             createOrder(){
+                //for the local country
+                if (!this.country) {
+                    this.country = this.localCountry
+                }
+
                 //posting the data to the server to be saved
                 fetch("http://localhost/Anagar-Foods-Complete/data/create.php", {
                     method: "POST",
@@ -34,6 +44,7 @@
                         "Content-Type" : "application/json"
                     },
                     body: JSON.stringify({
+                        id: this.id,
                         location: this.location,
                         mainOrder: this.mainOrder,
                         additionalOrder: this.additionalOrder,
@@ -51,15 +62,14 @@
 
                 //populating the result property
                 .then((data) => {
-                    data = this.response;
-                    this.response = this.response.message
+                    this.response = data
 
                     //redirect if the order was created
                     if (this.response.status == "success") {
                         
                         setTimeout(() => {
-                            this.$router.push({ name: "Login" })
-                        }, 3000)
+                            this.$router.push({ name: "Dashboard" })
+                        }, 1000)
                     }
                 })
             }
@@ -70,8 +80,6 @@
 <template>
     <div class=" flex justify-center py-24 bg-bg-4">
         <form @submit.prevent="createOrder" action="" class=" w-3/4 shadow-lg border-2 border-orange-600 px-3 sm:py-7 py-10 text-center rounded-lg bg-food-bg text-orange-500">
-            <div v-if="response" class=" text-lg sm:text-2xl text-orange-500 font-bold"> {{ response }} </div>
-            
             <div class=" text-2xl md:text-5xl font-serif text-orange-600 mb-12">Create Your Order</div>
 
 
@@ -121,15 +129,17 @@
                 <label class="session-input-label">State</label><br>
                 <input type="text" class="session-input" placeholder="Input Your State" v-model="state" required><br><br>
 
-                <div v-if="location == 'International'">
-                    <label class="session-input-label">Country</label><br>
-                    <div>
-                        <Country v-model="country" required></Country>
+                <div>
+                    <div v-if="location == 'International'">
+                        <label class="session-input-label">Country</label><br>
+                        <div>
+                            <Country v-model="country" required></Country>
+                        </div>
                     </div>
-                </div>
-                <div v-if="location == 'Local'">
-                    <label class="session-input-label">Country</label><br>
-                    <input type="text" class="session-input" value="Nigeria" readonly>
+                    <div v-if="location == 'Local'">
+                        <label class="session-input-label">Country</label><br>
+                        <input type="text" class="session-input" v-model="localCountry" readonly>
+                    </div>
                 </div>
             </div>
 
@@ -145,6 +155,8 @@
             <div>
                 <button type="submit" class="border-2 border-orange-600 p-3 rounded-md font-semibold bg-yellow-300 text-orange-600 hover:bg-yellow-600 hover:text-orange-300 transform transition ease-out duration-500 w-40">Submit</button>
             </div>
+
+            <div v-if="response" class=" text-lg sm:text-2xl text-green-500 font-bold"> {{ response.message }} </div>
         </form>
     </div>
 </template>

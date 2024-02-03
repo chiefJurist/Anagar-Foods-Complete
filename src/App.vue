@@ -53,6 +53,13 @@
                 //For Making Sure The userdata Values Are Not Changed When Page Is Refreshed
                 localStorage.setItem('user', JSON.stringify(userData));
             },
+
+            loggingOut(){
+                this.session = false;
+                this.id = this.username = this.email = this.type = "";
+                localStorage.clear();
+                this.$router.push({ name: "Home" })
+            }
         },
 
         
@@ -77,6 +84,7 @@
     }
 </script>
 
+
 <template>
     <div class="app" v-if="!session">
         <Header @control ="toggleShowMenu" />
@@ -89,7 +97,7 @@
     <Teleport to="#session" v-if="session">
         <Header2 @control2="toggleShowMenu2"></Header2>
         <Menu2 :showMenu2="showMenu2" @control2="toggleShowMenu2"></Menu2>
-        <RouterView @control3="changeHeader"></RouterView>
+        <RouterView @control3="changeHeader" @logOut="loggingOut" @login-success="handleLoginSuccess" :id="id" :email="email" :username="username" :type="type"></RouterView>
         <Footer></Footer>
     </Teleport>
 </template>

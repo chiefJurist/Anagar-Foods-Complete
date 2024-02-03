@@ -155,7 +155,7 @@
     @apply text-orange-600;
 }
 .session-order-main{
-    @apply capitalize text-yellow-400;
+    @apply font-semibold text-yellow-400;
 }
 .session-btn{
     @apply border-4 border-orange-600 p-3 rounded-md font-bold bg-yellow-300 text-orange-600 hover:bg-yellow-600 hover:text-orange-300 transform transition ease-out duration-500;
