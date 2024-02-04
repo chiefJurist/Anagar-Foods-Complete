@@ -97,7 +97,7 @@
     @apply text-xl;
 }
 .main-input{
-    @apply w-full border-none outline-none caret-gray-800 sm:text-xl font-bold p-1 sm:p-3 rounded-lg lowercase;
+    @apply w-full border-none outline-none caret-gray-800 sm:text-xl font-bold p-1 sm:p-3 rounded-lg;
 }
 .submit-con{
     @apply mt-20 flex justify-center;
