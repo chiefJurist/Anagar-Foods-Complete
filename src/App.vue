@@ -17,7 +17,7 @@
                 showMenu2: false,
                 session: false,
                 //FOR THE DATABASE SESSION
-                id: "",
+                id: "5",
                 email: "",
                 username: "",
                 type: ""
@@ -37,6 +37,7 @@
             //For changing The Type Of Header And Menu to Display
             changeHeader() {
                 this.session = !this.session
+                console.log(this.id)
                 // Save the session state to localStorage
                 localStorage.setItem('session', JSON.stringify(this.session));
             },
@@ -48,6 +49,7 @@
                 this.email = userData.email;
                 this.username = userData.username;
                 this.type = userData.type;
+                console.log(this.id)
 
                 // Save user data to localStorage
                 //For Making Sure The userdata Values Are Not Changed When Page Is Refreshed
@@ -97,7 +99,7 @@
     <Teleport to="#session" v-if="session">
         <Header2 @control2="toggleShowMenu2"></Header2>
         <Menu2 :showMenu2="showMenu2" @control2="toggleShowMenu2"></Menu2>
-        <RouterView @control3="changeHeader" @logOut="loggingOut" @login-success="handleLoginSuccess" :id="id" :email="email" :username="username" :type="type"></RouterView>
+        <RouterView @control3="changeHeader" @loginSuccess="handleLoginSuccess" @logOut="loggingOut" :id="id" :email="email" :username="username" :type="type"></RouterView>
         <Footer></Footer>
     </Teleport>
 </template>
