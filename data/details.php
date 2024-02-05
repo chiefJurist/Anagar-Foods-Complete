@@ -29,7 +29,7 @@
         if ($data) {
             $response = $data;
         } else {
-            $response = array('empty' => 'error', 'message' => 'No Orders Made');
+            $response = array('status' => 'empty', 'message' => 'No Orders Made');
         }
     } else {
 
