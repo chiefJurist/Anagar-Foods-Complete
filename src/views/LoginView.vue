@@ -55,7 +55,7 @@
                         if (this.result.status == "success") {
                             this.change()
                             // Emit an event with user data
-                            this.$emit("login-success", {
+                            this.$emit("loginSuccess", {
                                 id: this.result.id,
                                 email: this.result.email,
                                 username: this.result.username,
@@ -65,6 +65,8 @@
                         }
                     }
                 })
+                //CATCHING ERRORS   
+                .catch(err => console.log(err.message))
             }
         }
     }
