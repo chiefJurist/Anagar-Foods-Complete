@@ -1,4 +1,5 @@
 <?php 
+/* FOR GETTING THE USERS FOR VALIDATION BEFORE SAVING */
     //INCLUDE THE DATABASE CONNECTION
     include("config.php");
 

@@ -65,13 +65,14 @@
                     this.response = data
 
                     //redirect if the order was created
-                    if (this.response.status == "success") {
-                        
+                    if (this.response.status == "success") {     
                         setTimeout(() => {
                             this.$router.push({ name: "Dashboard" })
                         }, 1000)
                     }
                 })
+                //catching error
+                .catch((err) => console.error(err));
             }
         }
     }

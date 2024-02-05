@@ -85,13 +85,13 @@
                     })
                     .then((res) => res.json())
                     .then((data2) => {
-                            // Handle the response from the server
-                            this.response = data2;
-                            if (this.response.status == "success") {
-                                setTimeout(() => {
-                                    this.$router.push({ name: "Login" })
-                                }, 3000)
-                            }
+                        // Handle the response from the server
+                        this.response = data2;
+                        if (this.response.status == "success") {
+                            setTimeout(() => {
+                                this.$router.push({ name: "Login" })
+                            }, 2000)
+                        }
                     })
                     .catch((err) => console.error(err));
                 }
