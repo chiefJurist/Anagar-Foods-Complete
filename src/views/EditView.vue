@@ -1,8 +1,41 @@
 <script>
     export default{
+        props: [ 'id' ],
+
+        data() {
+            return{
+                newUsername: "",
+                newType: "",
+                dbResponse: ""
+            }
+        },
+
         methods: {
+            //Clear Errors
+            clearUsernameError(){
+                this.usernameError = ""
+            },
             handleSubmit() {
-                //Validate input and redirect
+                //Validate And Redirect
+                fetch("http://localhost/Anagar-Foods-Complete/data/editProfile.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type" : "application/json"
+                    },
+                    body: JSON.stringify({
+                        id: this.id,
+                        username: this.newUsername,
+                        type: this.newType
+                    })
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    this.dbResponse = data
+                    if (this.dbResponse.status == "success") {
+                        this.$router.push({name: 'Settings'})
+                    }
+                })
+                .catch((error) => console.error(error))
             }
         }
     }
@@ -12,20 +45,16 @@
     <div class="form-con">
         <form @submit.prevent="handleSubmit" class="main-form">
             <div class="input-con">
-                <label class="label"> New Email:</label><br>
-                <input type="email" placeholder="input new email" class="main-input" required>
-                <div></div>
-            </div>
-
-            <div class="input-con">
                 <label class="label">New Username:</label><br>
-                <input type="text" placeholder="input new username" class="main-input" required>
-                <div></div>
+                <input type="text" placeholder="input new username" class="main-input" required v-model="newUsername" @keydown="clearUsernameError">
+                <div class=" text-red-500 text-center text-lg mt-24">
+                    {{ dbResponse.message }}
+                </div>
             </div>
 
             <div class="input-con">
                 <label class="label">Usage: </label>
-                <select class="sm:text-xl font-bold p-1 sm:p-3 rounded-lg w-4/5" required>
+                <select class="sm:text-xl font-bold p-1 sm:p-3 rounded-lg w-4/5" required v-model="newType">
                     <option value="Consumer">Consumer</option>
                     <option value="Merchant">Merchant</option>
                 </select>
