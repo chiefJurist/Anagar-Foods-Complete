@@ -18,9 +18,9 @@
                 session: false,
                 //FOR THE DATABASE SESSION
                 id: "5",
-                email: "",
-                username: "",
-                type: ""
+                email: "testemail",
+                username: "testuser",
+                type: "testtype"
             }
         },
 

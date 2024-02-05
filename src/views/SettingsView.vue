@@ -6,6 +6,8 @@
     export default {
         components:{ Title, Body, Logout },
 
+        props: [ 'email', 'username', 'type' ],
+
         methods: {
             logOutFunction(){
                 this.$emit("logOut")
@@ -17,7 +19,7 @@
 <template>
     <div class=" bg-bg-5">
         <Title></Title>
-        <Body></Body>
+        <Body :email="email" :username="username" :type="type"></Body>
         <Logout @logOut="logOutFunction"></Logout>
     </div>
 </template>
