@@ -38,6 +38,8 @@
                     this.dashboard = false;
                 }
             })
+            //catching errors
+            .catch((error) => console.error(error))
         }
     }
 </script>
