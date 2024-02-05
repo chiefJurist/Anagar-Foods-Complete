@@ -18,18 +18,6 @@
             }
         },
 
-        mounted(){
-            fetch("http://localhost/Anagar-Foods-Complete/data/register.php")
-            //Fetching The Response
-            .then((response) => response.json())
-
-            //Fetching The Actual Data and Populating The Users Property
-            .then((data) => this.users = data)
-            
-            //Catching Errors
-            .catch((error) => console.error("Error fetching data:", error));
-        },
-
         methods: {
             //CLEARING THE ERROR
             clearError(){
@@ -38,6 +26,16 @@
 
             //VALIDATE FORM
             validateForm() {
+                fetch("http://localhost/Anagar-Foods-Complete/data/register.php")
+                //Fetching The Response
+                .then((response) => response.json())
+
+                //Fetching The Actual Data and Populating The Users Property
+                .then((data) => this.users = data)
+                
+                //Catching Errors
+                .catch((error) => console.error("Error fetching data:", error));
+                
                 //Validate Email
                 for (const user of this.users) {
                     if (user.email == this.email) {
@@ -87,13 +85,13 @@
                     })
                     .then((res) => res.json())
                     .then((data2) => {
-                            // Handle the response from the server
-                            this.response = data2;
-                            if (this.response.status == "success") {
-                                setTimeout(() => {
-                                    this.$router.push({ name: "Login" })
-                                }, 3000)
-                            }
+                        // Handle the response from the server
+                        this.response = data2;
+                        if (this.response.status == "success") {
+                            setTimeout(() => {
+                                this.$router.push({ name: "Login" })
+                            }, 2000)
+                        }
                     })
                     .catch((err) => console.error(err));
                 }
@@ -105,10 +103,6 @@
 <template>
     <div class="form-con">
         <form @submit.prevent="validateForm" class="main-form" method="POST" action="../../data/register2.php">
-            <div v-if="response.status == 'success'" class=" text-center font-semibold text-2xl text-green-600 uppercase">
-                {{ response.message }} You Will Be Redirected Soon
-            </div>
-
             <div class="input-con">
                 <label class="label"> New Email:</label><br>
                 <input type="email" placeholder="input new email" class="main-input" required v-model="email" @keydown="clearError">
@@ -150,6 +144,10 @@
 
             <div class="submit-con">
                 <input type="submit" value="Register" class="main-submit">
+            </div>
+
+            <div v-if="response.status == 'success'" class=" text-center font-bold text-lg text-green-600 uppercase">
+                {{ response.message }}
             </div>
         </form>
     </div>

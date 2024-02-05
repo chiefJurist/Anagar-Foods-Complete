@@ -5,9 +5,12 @@
         //Storing the fetched data from mounted below in a property
         data(){
             return{
-                order: ""
+                order: "",
+                deleteResponse: "",
+                deleteDisplay: ""
             }
         },
+
         //Fetching the details of each order
         mounted(){
             fetch("http://localhost/Anagar-Foods-Complete/data/details.php", {
@@ -28,6 +31,30 @@
             })
             //catching errors
             .catch(err => console.log(err.message))
+        },
+
+        methods: {
+            handleDelete(){
+                fetch("http://localhost/Anagar-Foods-Complete/data/deleteOrder.php", {
+                    method: "POST",
+                    headers: {
+                        "Content-Type" : "application/json"
+                    },
+                    body: JSON.stringify({
+                        deleteId: this.orderId
+                    })
+                })
+                .then((response) => response.json())
+                .then((data) => {
+                    this.deleteResponse = data
+                    if (this.deleteResponse.status != "failure" || this.deleteResponse.status != "error") {
+                        this.$router.push({ name: "Dashboard" })
+                    } else {
+                        this.deleteDisplay = "Can't Delete Order At This Point"
+                    }
+                })
+                .catch(err => console.log(err.message))
+            }
         }
     }
 </script>
@@ -64,6 +91,10 @@
             <span class="session-order-main"> {{ order.arrival }} </span>
         </div>
 
-        <button class=" mt-7 session-btn">Cancel Order</button>
+        <form @submit.prevent="handleDelete">
+            <button class=" mt-7 session-btn">Cancel Order</button>
+        </form>
+
+        <div v-if="deleteDisplay" class=" text-red-500 text-lg font-semibold mt-10"> {{ deleteDisplay }} </div>
     </div>
 </template>

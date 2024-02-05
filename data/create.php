@@ -40,15 +40,12 @@
             // Failed Creation
             $response = array('status' => 'error', 'message' => 'Error Creating Order');
         }
-    
-        // RETURN JSON RESPONSE
-        header('Content-Type: application/json');
-        $jsonResult = json_encode($response);
-        echo $jsonResult;
     } else {
         // If Not A Post Request
         $response = array('status' => 'error', 'message' => 'Invalid request method');
-        header('Content-Type: application/json');
-        $jsonResult = json_encode($response);
-        echo $jsonResult;
     }
+
+    // RETURN JSON RESPONSE
+    header('Content-Type: application/json');
+    $jsonResult = json_encode($response);
+    echo $jsonResult;

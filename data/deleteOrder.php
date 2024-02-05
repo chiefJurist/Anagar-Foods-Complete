@@ -1,4 +1,4 @@
-<?php 
+<?php  
     //INCLUDE THE DATABASE CONNECTION
     include("config.php");
 
@@ -9,35 +9,33 @@
 
 
     //IF A GET REQUEST WAS MADE
-    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //get post result
         $postData = json_decode(file_get_contents("php://input"));
 
         //assigning the postdata to a variable
-        $id = $conn->real_escape_string($postData->id);
+        $deleteId = $conn->real_escape_string($postData->deleteId);
 
         //create query
-        $sql = "SELECT * FROM orders WHERE user_id = '$id' ORDER BY created_at DESC";
+        $sql = "DELETE FROM orders WHERE id = '$deleteId'";
 
         //get the result 
         $result = $conn->query($sql);
 
-        //fetch the result in array format
-        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
-
         //populating the response array
-        if ($data) {
-            $response = $data;
+        if ($result) {
+            $response = $result;
         } else {
-            $response = array('status' => 'empty', 'message' => 'No Orders Made');
+            $response = array('status' => 'failure', 'message' => $conn->error);
         }
     } else {
-
-       //populating the response array
+        //populating the response array
         $response = array('status' => 'error', 'message' => 'Invalid Request Method');
     }
+
 
     //RETURN JSON RESPONSE
     header('Content-Type: application/json');
     $jsonResult = json_encode($response);
     echo $jsonResult;
+    

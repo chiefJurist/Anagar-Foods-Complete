@@ -37,15 +37,12 @@
             // FAILED INSERT
             $response = array('status' => 'error', 'message' => 'Error registering user');
         }
-    
-        // RETURN JSON RESPONSE
-        header('Content-Type: application/json');
-        $jsonResult = json_encode($response);
-        echo $jsonResult;
     } else {
         // IF NOT A POST REQUEST
         $response = array('status' => 'error', 'message' => 'Invalid request method');
-        header('Content-Type: application/json');
-        $jsonResult = json_encode($response);
-        echo $jsonResult;
     }
+
+    // RETURN JSON RESPONSE
+    header('Content-Type: application/json');
+    $jsonResult = json_encode($response);
+    echo $jsonResult;

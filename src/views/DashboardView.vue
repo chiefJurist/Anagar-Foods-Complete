@@ -10,12 +10,12 @@
 
         data () {
             return {
-                dashboard: true,
+                dashboard: false,
                 result: ""
             }
         },
 
-        beforeMount () {
+        mounted () {
             //Fetch data from the database
             fetch("http://localhost/Anagar-Foods-Complete/data/dashboard.php", {
                 method: "POST",
