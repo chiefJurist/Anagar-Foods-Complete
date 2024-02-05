@@ -8,9 +8,6 @@
     header("Access-Control-Allow-Headers: Content-Type");
     
 
-    // //START THE SESSION
-    // session_start();
-
     //CHECK IF A OST REQUEST WAS MADE
     if ($_SERVER['REQUEST_METHOD'] === "POST") {
         //GET POST DATA
@@ -40,41 +37,22 @@
                 // $header = "From: admin@anagar-foods.com \r\n";
                 // mail($to, $subject, $message, $header);
 
-                // //Create A Session For All The Imported Data
-                // $_SESSION['id'] = $userData['id'];
-                // $_SESSION['email'] = $userData['email'];
-                // $_SESSION['username'] = $userData['username'];
-                // $_SESSION['type'] = $userData['type'];
-
                 //Login Successful, Insert JSON Response
                 $response = array('status' => 'success', 'message' => 'Login Successful', 'id' => $userData['id'], 'email' => $userData['email'], 'username' => $userData['username'], 'type' => $userData['type']);
-
-                //Return JSON Response
-                header("Content-Type: application/json");
-                $jsonResult = json_encode($response);
-                echo $jsonResult;
             } else {
                 //Wrong Password, Insert Response
-                $response2 = array('status' => 'invalid', 'message' => 'Invalid Password');
-
-               //Return JSON Response
-               header("Content-Type: application/json");
-               $jsonResult = json_encode($response2);
-               echo $jsonResult;
+                $response = array('status' => 'invalid', 'message' => 'Invalid Password');
             }
         } else {
             //User Does Not Exist, Insert Response
-            $response3 = array('status' => 'unrecognized', 'message' => 'You Do Not Have An Account');
-
-            //Return JSON Response
-            header("Content-Type: application/json");
-            $jsonResult = json_encode($response3);
-            echo $jsonResult;
+            $response = array('status' => 'unrecognized', 'message' => 'You Do Not Have An Account');
         }
     } else {
         // IF NOT A POST REQUEST
-        $response4 = array('status' => 'error', 'message' => 'Invalid request method');
-        header('Content-Type: application/json');
-        $jsonResult = json_encode($response4);
-        echo $jsonResult;
+        $response = array('status' => 'error', 'message' => 'Invalid request method');
     }
+
+    //RETURN JSON RESPONSE
+    header("Content-Type: application/json");
+    $jsonResult = json_encode($response);
+    echo $jsonResult;
