@@ -17,7 +17,7 @@
         $deleteId = $conn->real_escape_string($postData->deleteId);
 
         //create query
-        $sql = "DELETE FROM orders WHERE id = '$deleteId'";
+        $sql = "UPDATE orders SET status='Canceled' WHERE id='$deleteId'";
 
         //get the result 
         $result = $conn->query($sql);
