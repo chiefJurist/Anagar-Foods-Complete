@@ -71,6 +71,12 @@ const router = createRouter({
             path: '/edit',
             name: 'Edit',
             component: () => import('../views/EditView.vue')
+        },
+        //Catch all 404
+        {
+            path: '/:catchAll(.*)',
+            name: 'NotFound',
+            component: () => import('../views/NotFoundView.vue')
         }
     ]
 })

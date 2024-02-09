@@ -6,10 +6,39 @@
     export default{
         components: { Empty, Info, Title},
 
+        props: ['id'],
+
         data () {
             return{
-                notify: true
+                notify: false,
+                result: ""
             }
+        },
+
+        mounted () {
+            //Fetch data from the database
+            fetch("http://localhost/Anagar-Foods-Complete/data/dashboard.php", {
+                method: "POST",
+                headers: {
+                    "Content-Type" : "application/json"
+                },
+                body: JSON.stringify({
+                    id: this.id
+                })
+            })
+            //fetching the response
+            .then((response) => response.json())
+            //fetching the actual data and populating the result property
+            .then((data) => {
+                this.result = data;
+                if (this.result.status  != "empty" &&  this.result.status  != "error") {
+                    this.notify = true;
+                } else {
+                    this.notify = false;
+                }
+            })
+            //catching errors
+            .catch((error) => console.error(error))
         }
     }
 </script>
@@ -18,6 +47,6 @@
     <div class=" bg-bg-7 mx-5">
         <Title v-if="notify"></Title>
         <Empty v-if="!notify"></Empty>
-        <Info v-if="notify"></Info>
+        <Info v-if="notify" :result="result"></Info>
     </div>
 </template>

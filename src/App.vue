@@ -17,10 +17,10 @@
                 showMenu2: false,
                 session: false,
                 //FOR THE DATABASE SESSION
-                id: "5",
-                email: "testemail",
-                username: "testuser",
-                type: "testtype"
+                id: "",
+                email: "",
+                username: "",
+                type: ""
             }
         },
 
