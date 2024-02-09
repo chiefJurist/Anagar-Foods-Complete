@@ -30,7 +30,7 @@
                 console.log(this.order)
             })
             //catching errors
-            .catch(err => console.log(err.message))
+            .catch(err => console.error(err.message))
         },
 
         methods: {
@@ -53,7 +53,7 @@
                         this.deleteDisplay = "Can't Delete Order At This Point"
                     }
                 })
-                .catch(err => console.log(err.message))
+                .catch(err => console.error(err.message))
             }
         }
     }

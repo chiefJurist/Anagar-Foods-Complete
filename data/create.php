@@ -13,7 +13,7 @@
         $postData = json_decode(file_get_contents("php://input"));
 
         //Assigning The Postdata To Variables
-        $id = $conn->real_escape_string($postData->id);
+        $userId = $conn->real_escape_string($postData->id);
         $location = $conn->real_escape_string($postData->location);
         $mainOrder = $conn->real_escape_string($postData->mainOrder);
         $additionalOrder = $conn->real_escape_string($postData->additionalOrder);
@@ -23,12 +23,11 @@
         $state = $conn->real_escape_string($postData->state);
         $country = $conn->real_escape_string($postData->country);
         $orderType = $conn->real_escape_string($postData->orderType);
-        $userId = $conn->real_escape_string($id);
         $currentDate = date('Y-m-d');
         $arrival = date('Y-m-d', strtotime($currentDate . ' +1 day'));
 
         //Create A Query to Input data In The Database
-        $sql = "INSERT INTO orders(location, main_order, additional_order, street_address, zip, city, state, country, order_type, user_id, arrival) VALUES('$location', '$mainOrder', '$additionalOrder', '$streetAddress', '$zip', '$city', '$state', '$country', '$orderType', '$userId', '$arrival')";
+        $sql = "INSERT INTO orders(location, main_order, additional_order, street_address, zip, city, state, country, order_type, user_id, arrival, status) VALUES('$location', '$mainOrder', '$additionalOrder', '$streetAddress', '$zip', '$city', '$state', '$country', '$orderType', '$userId', '$arrival', 'Received')";
 
         //Getting The Query Result
         $result = $conn->query($sql);

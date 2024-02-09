@@ -1,4 +1,4 @@
-<?php  
+<?php 
     //INCLUDE THE DATABASE CONNECTION
     include("config.php");
 
@@ -9,33 +9,35 @@
 
 
     //IF A GET REQUEST WAS MADE
-    if ($_SERVER['REQUEST_METHOD'] == "POST") {
+    if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         //get post result
         $postData = json_decode(file_get_contents("php://input"));
 
         //assigning the postdata to a variable
-        $deleteId = $conn->real_escape_string($postData->deleteId);
+        $id = $conn->real_escape_string($postData->id);
 
         //create query
-        $sql = "UPDATE orders SET status='Canceled' WHERE id='$deleteId'";
+        $sql = "SELECT * FROM history WHERE user_id = '$id' ORDER BY created_at DESC";
 
         //get the result 
         $result = $conn->query($sql);
 
+        //fetch the result in array format
+        $data = mysqli_fetch_all($result, MYSQLI_ASSOC);
+
         //populating the response array
-        if ($result) {
-            $response = $result;
+        if ($data) {
+            $response = $data;
         } else {
-            $response = array('status' => 'failure', 'message' => $conn->error);
+            $response = array('status' => 'empty', 'message' => 'No Orders Made');
         }
     } else {
-        //populating the response array
+
+       //populating the response array
         $response = array('status' => 'error', 'message' => 'Invalid Request Method');
     }
-
 
     //RETURN JSON RESPONSE
     header('Content-Type: application/json');
     $jsonResult = json_encode($response);
     echo $jsonResult;
-    
