@@ -17,7 +17,7 @@
                 showMenu2: false,
                 session: false,
                 //FOR THE DATABASE SESSION
-                id: "",
+                id: "2",
                 email: "",
                 username: "",
                 type: ""
