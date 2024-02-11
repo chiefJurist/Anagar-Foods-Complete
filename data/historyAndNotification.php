@@ -17,7 +17,7 @@
         $id = $conn->real_escape_string($postData->id);
 
         //create query
-        $sql = "SELECT * FROM history WHERE user_id = '$id' ORDER BY created_at DESC";
+        $sql = "SELECT * FROM orders WHERE user_id = '$id' ORDER BY created_at DESC";
 
         //get the result 
         $result = $conn->query($sql);
