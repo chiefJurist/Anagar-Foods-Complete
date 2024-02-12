@@ -8,7 +8,7 @@
     header("Access-Control-Allow-Headers: Content-Type");
 
 
-    //IF A GET REQUEST WAS MADE
+    //IF A POST REQUEST WAS MADE
     if ($_SERVER['REQUEST_METHOD'] == "POST") {
         //get post result
         $postData = json_decode(file_get_contents("php://input"));

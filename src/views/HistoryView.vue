@@ -17,7 +17,7 @@
 
         mounted () {
             //Fetch data from the database
-            fetch("http://localhost/Anagar-Foods-Complete/data/dashboard.php", {
+            fetch("http://localhost/Anagar-Foods-Complete/data/historyAndNotification.php", {
                 method: "POST",
                 headers: {
                     "Content-Type" : "application/json"

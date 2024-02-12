@@ -20,6 +20,8 @@ module.exports = {
         'src/views/ContactView.vue',
         'src/views/AboutView.vue',
         'src/views/HomeView.vue',
+        'src/views/NotFoundView.vue',
+        'src/views/forgotPasswordView.vue',
 
         //AFTER THE USER HAS LOGGED IN
         'src/views/DashboardView.vue',
