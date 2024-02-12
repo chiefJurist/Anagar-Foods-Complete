@@ -101,7 +101,7 @@
                 
                 <div class="text-lg sm:text-2xl font-semibold pt-8">ADDITIONAL ORDER</div>
                 <div>
-                    <Local v-model="additionalOrder" required></Local>
+                    <Local v-model="additionalOrder"></Local>
                 </div>
             </div>
 
@@ -113,7 +113,7 @@
                 
                 <div class="text-lg sm:text-2xl font-semibold pt-8">ADDITIONAL ORDER</div>
                 <div>
-                    <International v-model="additionalOrder" required></International>
+                    <International v-model="additionalOrder"></International>
                 </div>
             </div>
 
