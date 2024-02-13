@@ -1,12 +1,18 @@
 <script>
     export default{
-        props: [ 'id' ],
+        props: [ 'id', 'session' ],
 
         data() {
             return{
                 newUsername: "",
                 newType: "",
                 dbResponse: ""
+            }
+        },
+
+        beforeMount (){
+            if (this.session == false) {
+                this.$router.push({name: "Home"})
             }
         },
 
