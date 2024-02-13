@@ -6,12 +6,18 @@
     export default{
         components: { Empty, Record, Title},
 
-        props: [ 'id' ],
+        props: [ 'id', 'session' ],
 
         data () {History
             return{
                 history: false,
                 result: ""
+            }
+        },
+
+        beforeMount (){
+            if (this.session == false) {
+                this.$router.push({name: "Home"})
             }
         },
 
