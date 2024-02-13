@@ -1,5 +1,7 @@
 <script>
     export default{
+        props: ['session'],
+        
         data(){
             return{
                 users: [],
@@ -16,6 +18,12 @@
                 termsError: "",
                 response: "",
                 display: ""
+            }
+        },
+
+        beforeMount (){
+            if (this.session == true) {
+                this.$router.push({name: "Dashboard"})
             }
         },
 
