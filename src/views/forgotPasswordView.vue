@@ -1,5 +1,7 @@
 <script>
     export default{
+        props: ['session'],
+
         data(){
             return{
                 email: "",
@@ -11,6 +13,12 @@
                 otpError: "",
                 result: "",
                 result2: ""
+            }
+        },
+
+        beforeMount (){
+            if (this.session == true) {
+                this.$router.push({name: "Dashboard"})
             }
         },
 

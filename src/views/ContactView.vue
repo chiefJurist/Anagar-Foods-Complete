@@ -5,6 +5,14 @@
 
     export default{
         components: { ContactMap, ContactMessage, ContactNav },
+        
+        props: ['session'],
+
+        beforeMount (){
+            if (this.session == true) {
+                this.$router.push({name: "Dashboard"})
+            }
+        }
     }
 </script>
 

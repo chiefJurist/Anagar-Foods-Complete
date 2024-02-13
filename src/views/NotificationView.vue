@@ -6,12 +6,18 @@
     export default{
         components: { Empty, Info, Title},
 
-        props: ['id'],
+        props: ['id', 'session'],
 
         data () {
             return{
                 notify: false,
                 result: ""
+            }
+        },
+
+        beforeMount (){
+            if (this.session == false) {
+                this.$router.push({name: "Home"})
             }
         },
 

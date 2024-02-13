@@ -1,5 +1,7 @@
 <script>
     export default{
+        props: ['session'],
+
         data(){
             return{
                 recognition: "",
@@ -10,6 +12,13 @@
                 postError: ""
             }
         },
+
+        beforeMount (){
+            if (this.session == true) {
+                this.$router.push({name: "Dashboard"})
+            }
+        },
+
         methods: {
             change() {
                 this.$emit("control3")

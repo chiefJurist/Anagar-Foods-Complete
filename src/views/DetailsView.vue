@@ -1,6 +1,6 @@
 <script>
     export default{
-        props: ['orderId'],
+        props: ['orderId', 'session'],
         
         //Storing the fetched data from mounted below in a property
         data(){
@@ -8,6 +8,12 @@
                 order: "",
                 deleteResponse: "",
                 deleteDisplay: ""
+            }
+        },
+
+        beforeMount (){
+            if (this.session == false) {
+                this.$router.push({name: "Home"})
             }
         },
 

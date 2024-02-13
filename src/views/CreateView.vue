@@ -7,7 +7,7 @@
         components: { International, Local, Country },
 
         //PASSING IN THE USERDATA PROPS FROM THE PARENT COMPONENT
-        props: ['id'],
+        props: ['id', 'session'],
 
         data () {
             return{
@@ -25,8 +25,10 @@
             }
         },
 
-        computed: {
-            //
+        beforeMount (){
+            if (this.session == false) {
+                this.$router.push({name: "Home"})
+            }
         },
 
         methods: {
