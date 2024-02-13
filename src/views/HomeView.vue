@@ -3,7 +3,15 @@
     import Images from "../components/Home/ImagesDisplay.vue";
 
     export default {
-        components: { Welcome, Images }
+        components: { Welcome, Images },
+
+        props: ['session'],
+
+        beforeMount (){
+            if (this.session == true) {
+                this.$router.push({name: "Dashboard"})
+            }
+        }
     }
 </script>
 
