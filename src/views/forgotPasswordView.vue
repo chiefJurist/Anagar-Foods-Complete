@@ -81,19 +81,19 @@
         <form @submit.prevent="handleSubmit" class="main-form" v-if="result.status != 'otp'">
             <div class="input-con">
                 <label class="label">Input Your Email</label><br>
-                <input type="text" placeholder="Input your email Address" class="main-input" required v-model="email" @keydown="clearError">
+                <input type="email" placeholder="Input your email Address" class="main-input" required v-model="email" @keydown="clearError">
                 <div class=" text-red-500 text-center text-lg"> {{ emailError }} </div>
             </div>
 
             <div class="input-con">
                 <label class="label">Input New Password</label><br>
-                <input type="text" placeholder="Input New Password" class="main-input" required v-model="password" @keydown="clearError">
+                <input type="password" placeholder="Input New Password" class="main-input" required v-model="password" @keydown="clearError">
                 <div class=" text-red-500 text-center text-lg"> {{ passwordError }} </div>
             </div>
 
             <div class="input-con">
                 <label class="label">Confirm New Password</label><br>
-                <input type="text" placeholder="Confirm New Password" class="main-input" required v-model="password2" @keydown="clearError">
+                <input type="password" placeholder="Confirm New Password" class="main-input" required v-model="password2" @keydown="clearError">
                 <div class=" text-red-500 text-center text-lg"> {{ passwordError }} </div>
             </div>
 
