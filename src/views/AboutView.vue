@@ -6,7 +6,15 @@
     import LocalMenu2 from '../components/About/LocalMenu2.vue';
 
     export default {
-        components : { AboutNav, AboutDescription, InternationalMenu, LocalMenu, LocalMenu2 }
+        components : { AboutNav, AboutDescription, InternationalMenu, LocalMenu, LocalMenu2 },
+
+        props: ['session'],
+
+        beforeMount (){
+            if (this.session == true) {
+                this.$router.push({name: "Dashboard"})
+            }
+        }
     }
 </script>
 
