@@ -17,7 +17,7 @@
                 showMenu2: false,
                 session: false,
                 //FOR THE DATABASE SESSION
-                id: "2",
+                id: "",
                 email: "",
                 username: "",
                 type: ""
@@ -89,17 +89,17 @@
 
 <template>
     <div class="app" v-if="!session">
-        <Header @control ="toggleShowMenu" />
-        <Menu :showMenu="showMenu" @control="toggleShowMenu" />
-	    <RouterView v-if="!showMenu" @control3="changeHeader"/>
-        <Footer v-if="!showMenu" />
+        <Header @control ="toggleShowMenu"></Header>
+        <Menu :showMenu="showMenu" @control="toggleShowMenu"></Menu>
+	    <RouterView @control3="changeHeader" @loginSuccess="handleLoginSuccess" :session="session"></RouterView>
+        <Footer></Footer>
     </div>
 
     <!--After The User Has Logged In-->
     <Teleport to="#session" v-if="session">
         <Header2 @control2="toggleShowMenu2"></Header2>
         <Menu2 :showMenu2="showMenu2" @control2="toggleShowMenu2"></Menu2>
-        <RouterView @control3="changeHeader" @loginSuccess="handleLoginSuccess" @logOut="loggingOut" :id="id" :email="email" :username="username" :type="type"></RouterView>
+        <RouterView @logOut="loggingOut" :session="session" :id="id" :email="email" :username="username" :type="type"></RouterView>
         <Footer></Footer>
     </Teleport>
 </template>
