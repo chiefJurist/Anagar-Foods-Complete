@@ -6,7 +6,13 @@
     export default {
         components:{ Title, Body, Logout },
 
-        props: [ 'email', 'username', 'type' ],
+        props: [ 'email', 'username', 'type', 'session' ],
+
+        beforeMount (){
+            if (this.session == false) {
+                this.$router.push({name: "Home"})
+            }
+        },
 
         methods: {
             logOutFunction(){
