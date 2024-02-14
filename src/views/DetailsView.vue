@@ -7,7 +7,9 @@
             return{
                 order: "",
                 deleteResponse: "",
-                deleteDisplay: ""
+                deleteDisplay: "",
+                creation: "",
+                arrival: ""
             }
         },
 
@@ -32,8 +34,16 @@
             .then((res)=> res.json())
             //fetching the actual data and populating the "order" property
             .then((data)=> {
-                this.order = data
-                console.log(this.order)
+                this.order = data 
+                //making the dates better
+                const creationDate = new Date(this.order.created_at);
+                const arrivalDate = new Date(this.order.arrival);
+                this.creation = creationDate.toString();
+                this.arrival = arrivalDate.toDateString()
+                //catching non existent orders
+                if (this.order.status == "empty") {
+                    this.$router.push({name: "NotFound", params: { catchAll: 'not-found' }})
+                }
             })
             //catching errors
             .catch(err => console.error(err.message))
@@ -79,7 +89,7 @@
 
         <div class="session-order-cont">
             <span class="session-order-title">CREATED AT: </span>
-            <span class="session-order-main"> {{ order.created_at }} </span>
+            <span class="session-order-main"> {{ creation }} </span>
         </div>
 
         <div class="session-order-cont">
@@ -94,7 +104,7 @@
 
         <div class="session-order-cont">
             <span class="session-order-title">ARRIVAL: </span>
-            <span class="session-order-main"> {{ order.arrival }} </span>
+            <span class="session-order-main"> {{ arrival }}. </span>
         </div>
 
         <form @submit.prevent="handleDelete">

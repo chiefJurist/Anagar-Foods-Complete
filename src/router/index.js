@@ -37,7 +37,7 @@ const router = createRouter({
 
         //AFTER LOGGING IN
         {
-            path: '/dashboard',
+            path: '/orders',
             name: 'Dashboard',
             component: () => import('../views/DashboardView.vue')
         },
@@ -62,7 +62,7 @@ const router = createRouter({
             component: () => import('../views/HistoryView.vue')
         },
         {
-            path: '/dashboard/:orderId',
+            path: '/orders/:orderId',
             name: 'Details',
             component: () => import('../views/DetailsView.vue'),
             props: true
