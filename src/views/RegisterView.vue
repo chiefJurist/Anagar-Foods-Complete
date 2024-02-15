@@ -116,7 +116,7 @@
             </div>
 
             <div class=" mt-10 text-center">
-                <input type="checkbox" required v-model="terms" class=" mr-5">
+                <input type="checkbox" required v-model="terms" class=" mr-5 accent-orange-600" checked>
                 <label>Accept terms and conditions</label>
                 <div class="error">  {{ termsError }} </div>
             </div>
