@@ -2,6 +2,7 @@
   "recommendations": [
     "Vue.vscode-typescript-vue-plugin",
     "devsense.phptools-vscode",
-    "devsense.profiler-php-vscode"
+    "devsense.profiler-php-vscode",
+    "bradlc.vscode-tailwindcss"
   ]
 }

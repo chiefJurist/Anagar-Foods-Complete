@@ -5,7 +5,7 @@
 </script>
 
 <template>
-    <div v-for="order in result" class=" text-center shadow-md border-l-4 border-orange-600 rounded-md bg-yellow-100 my-20 animate-grow">
+    <div v-for="order in result" class=" text-center shadow-md border-l-4 border-orange-600 rounded-md bg-yellow-100 my-20 animate-left">
         <div class=" flex justify-center">
             <img src="/img/img-4.jpg" alt="food image" class=" w-32 rounded-full relative -top-10">
         </div>

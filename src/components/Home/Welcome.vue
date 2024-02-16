@@ -13,7 +13,7 @@
 
         <!--Cards-->
         <div class="my-20 text-center flex justify-between gap-3 flex-wrap">
-            <div class=" bg-white rounded-lg w-72 shadow-lg p-6">
+            <div class=" animate-grow bg-white rounded-lg w-72 shadow-lg p-6">
                 <div class=" flex justify-center py-2">
                     <img src="/img/address.png" alt="">
                 </div>
@@ -22,7 +22,7 @@
                 <div>Deliver Nigerian delicacies within and accross Africa</div>
             </div>
 
-            <div class=" bg-white rounded-lg  w-72 shadow-lg p-6">
+            <div class=" animate-grow bg-white rounded-lg  w-72 shadow-lg p-6">
                 <div class=" flex justify-center py-2">
                     <img src="/img/card-1.png" alt="">
                 </div>
@@ -31,7 +31,7 @@
                 <div>No delivery fee for all orders</div>
             </div>
 
-            <div class=" bg-white rounded-lg  w-72 shadow-lg p-6">
+            <div class=" animate-grow bg-white rounded-lg  w-72 shadow-lg p-6">
                 <div class=" flex justify-center py-2">
                     <img src="/img/card-2.png" alt="">
                 </div>
@@ -40,7 +40,7 @@
                 <div>Our expertise lies in delivering Nigerian cuisine in large quantities.</div>
             </div>
 
-            <div class=" bg-white rounded-lg  w-72 shadow-lg p-6">
+            <div class=" animate-grow bg-white rounded-lg  w-72 shadow-lg p-6">
                 <div class=" flex justify-center py-2">
                     <img src="/img/time.png" alt="">
                 </div>

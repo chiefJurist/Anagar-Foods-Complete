@@ -134,7 +134,7 @@ module.exports = {
                     }
                 },
                 grow: {
-                    '0%' : {transform: 'scale(0.4)'},
+                    '0%' : {transform: 'scale(0.2)'},
                     '90%' : {transform: 'scale(1.1)'},
                     '100%' : {transform: 'scale(1)'}
                 }
