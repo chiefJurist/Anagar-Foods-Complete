@@ -84,7 +84,7 @@ module.exports = {
                     },
                     '90%' : {
                         transform: 'translateX(-10%)',
-                        opacity: '0.5'
+                        opacity: '0.8'
                     },
                     '100%' : {
                         transform: 'translateX(0)',
@@ -98,7 +98,7 @@ module.exports = {
                     },
                     '90%' : {
                         transform: 'translateX(10%)',
-                        opacity: '0.5'
+                        opacity: '0.8'
                     },
                     '100%' : {
                         transform: 'translateX(0)',
@@ -112,7 +112,7 @@ module.exports = {
                     },
                     '90%' : {
                         transform: 'translateY(10%)',
-                        opacity: '0.5'
+                        opacity: '0.8'
                     },
                     '100%' : {
                         transform: 'translateY(0)',
@@ -126,7 +126,7 @@ module.exports = {
                     },
                     '90%' : {
                         transform: 'translateY(-10%)',
-                        opacity: '0.5'
+                        opacity: '0.8'
                     },
                     '100%' : {
                         transform: 'translatY(0)',
@@ -134,18 +134,18 @@ module.exports = {
                     }
                 },
                 grow: {
-                    '0%' : {transform: 'scale(0)'},
+                    '0%' : {transform: 'scale(0.4)'},
                     '90%' : {transform: 'scale(1.1)'},
                     '100%' : {transform: 'scale(1)'}
                 }
             },
 
             animation: {
-                right: 'right 1s ease-in-out',
-                left: 'left 1s ease-in-out',
-                top: 'top 1s ease-in',
-                bottom: 'bottom 1s ease-in',
-                grow: 'grow 1s ease-in'
+                right: 'right 1s ease-out',
+                left: 'left 1s ease-out',
+                top: 'top 1s ease-out',
+                bottom: 'bottom 1s ease-out',
+                grow: 'grow 1s ease-out'
             },
         },
     },
