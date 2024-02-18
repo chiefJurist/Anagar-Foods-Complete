@@ -75,78 +75,12 @@ module.exports = {
                 'food-bg': "url('/img/img-5.jpg')"
             },
 
-            //Custom Animations
-            keyframes: {
-                right: {
-                    '0%' : {
-                        transform: 'translateX(100%)',
-                        opacity: '0'
-                    },
-                    '90%' : {
-                        transform: 'translateX(-10%)',
-                        opacity: '0.8'
-                    },
-                    '100%' : {
-                        transform: 'translateX(0)',
-                        opacity: '1'
-                    }
-                },
-                left: {
-                    '0%' : {
-                        transform: 'translateX(-100%)',
-                        opacity: '0'
-                    },
-                    '90%' : {
-                        transform: 'translateX(10%)',
-                        opacity: '0.8'
-                    },
-                    '100%' : {
-                        transform: 'translateX(0)',
-                        opacity: '1'
-                    }
-                },
-                top: {
-                    '0%' : {
-                        transform: 'translateY(-100%)',
-                        opacity: '0'
-                    },
-                    '90%' : {
-                        transform: 'translateY(10%)',
-                        opacity: '0.8'
-                    },
-                    '100%' : {
-                        transform: 'translateY(0)',
-                        opacity: '1'
-                    }
-                },
-                bottom: {
-                    '0%' : {
-                        transform: 'translateY(100%)',
-                        opacity: '0'
-                    },
-                    '90%' : {
-                        transform: 'translateY(-10%)',
-                        opacity: '0.8'
-                    },
-                    '100%' : {
-                        transform: 'translateY(0)',
-                        opacity: '1'
-                    }
-                },
-                grow: {
-                    '0%' : {transform: 'scale(0.2)'},
-                    '90%' : {transform: 'scale(1.1)'},
-                    '100%' : {transform: 'scale(1)'}
-                }
-            },
-
-            animation: {
-                right: 'right 1s ease-out',
-                left: 'left 1s ease-out',
-                top: 'top 1s ease-out',
-                bottom: 'bottom 1s ease-out',
-                grow: 'grow 1s ease-out'
-            },
+            //Transition
+            transitionDuration: {
+                '1500': '1500ms',
+                '2000': '2000ms',
+            }
+                 
         },
     },
     plugins: [],
