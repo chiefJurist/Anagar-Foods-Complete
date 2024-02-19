@@ -88,7 +88,7 @@
     @apply bg-white bg-bg-8 bg-no-repeat bg-left-top w-4/5 sm:w-3/4 lg:w-1/2 rounded-lg shadow-lg p-6 sm:p-12;
 }
 .input-con{
-    @apply border border-gray-600 rounded-lg overflow-hidden p-2 lg:p-4 mt-6 transition duration-2000 ease-out;
+    @apply border border-gray-600 rounded-lg overflow-hidden p-2 lg:p-4 mt-6 transition duration-1000 ease-out;
 }
 .error{
     @apply text-red-600 text-lg sm:text-2xl text-center;
