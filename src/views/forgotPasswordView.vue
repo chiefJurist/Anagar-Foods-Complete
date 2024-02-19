@@ -76,6 +76,7 @@
                             this.otpError = this.result2.message
                         }
                     })
+                    .catch((err) => console.error(err))
                 } else {
                     this.otpError = "Invalid OTP"
                 }

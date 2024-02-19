@@ -39,7 +39,6 @@
                 this.result = data;
                 if (this.result.status  != "empty" &&  this.result.status  != "error") {
                     this.dashboard = true;
-                    console.log(this.result)
                 } else {
                     this.dashboard = false;
                 }
