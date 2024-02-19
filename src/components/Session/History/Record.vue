@@ -6,7 +6,7 @@
 
 <template>
     <div class="session-history-container">
-        <div class="session-record-container" v-for="record in result">
+        <div class="session-record-container" v-for="record in result" v-motion-slide-visible-left>
             <div class="session-history-date-container">
                 <div class="session-history-date"> {{ record.created_at }} </div>
                 <div class="session-history-progress">Order {{ record.status }}</div>

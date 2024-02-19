@@ -134,7 +134,7 @@
     @apply pb-40 ml-9 sm:ml-16 md:ml-24;
 }
 .session-record-container{
-    @apply bg-white shadow-lg rounded-md w-11/12 sm:w-11/12 p-4 sm:p-10 border-l-4 border-yellow-500 mb-10;
+    @apply bg-white shadow-lg rounded-md w-11/12 sm:w-11/12 p-4 sm:p-10 border-l-4 border-yellow-500 mb-10 transition duration-1000 ease-out;
 }
 .session-history-date{
     @apply italic font-light text-orange-400;
