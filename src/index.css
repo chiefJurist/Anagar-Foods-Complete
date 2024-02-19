@@ -38,11 +38,11 @@
 
 /*ContactView.vue*/
 .input{
-    @apply border border-gray-400 rounded-2xl p-2 md:mr-8 mt-5 w-full;
+    @apply border border-gray-400 rounded-2xl p-2 md:mr-8 mt-5 w-full outline-none;
 }
 
 .contact{
-    @apply lg:flex gap-5 pt-8;
+    @apply lg:flex gap-5 pt-8 transition duration-1500 ease-out;
 }
 
 .contact-head{
@@ -75,7 +75,7 @@
     @apply px-3 mt-40 lg:flex justify-between items-center gap-20;
 }
 .list-style{
-    @apply  shadow-md border-l-4 border-orange-600 my-3 p-3 italic font-bold rounded-md;
+    @apply  shadow-md border-l-4 border-orange-600 my-3 p-3 italic font-bold rounded-md transition duration-1500 ease-out;
 }
 
 
