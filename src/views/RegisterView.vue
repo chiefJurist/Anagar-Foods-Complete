@@ -94,7 +94,7 @@
                 <div class="error"> {{ usernameError }} </div>
             </div>
 
-            <div class="input-con" v-motion-slide-visible-once-left>-once
+            <div class="input-con" v-motion-slide-visible-once-left>
                 <label class="label">New Password:</label>
                 <input type="password" placeholder="input new password" class="main-input" required v-model="password" @keydown="clearError">
                 <div class="error"> {{ passwordError }} </div>
