@@ -6,7 +6,7 @@
 
 <template>
     <div class="session-history-container">
-        <div class="session-record-container"  v-for="info in result">
+        <div class="session-record-container"  v-for="info in result" v-motion-slide-visible-left>
             <div class=" text-right session-history-date">{{ info.created_at }}</div>
             <div class="session-history-details">
                 <span v-if="info.status == 'Received'">

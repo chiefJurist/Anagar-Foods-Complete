@@ -12,7 +12,7 @@
 
 <template>
     <transition name="slide-fade" mode="in-out">
-        <div v-if="showMenu" class="bg-orange-600 w-full fixed top-0 h-full">
+        <div v-if="showMenu" class="bg-orange-600 w-full fixed top-0 h-full z-10">
             <div class="p-5 pt-12 font-light block text-gray-300 text-4xl text-right">
                 <button @click="toggle"> X </button>
             </div>

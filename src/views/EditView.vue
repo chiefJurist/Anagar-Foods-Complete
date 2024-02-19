@@ -50,6 +50,10 @@
 <template>
     <div class="form-con">
         <form @submit.prevent="handleSubmit" class="main-form">
+            <div class=" text-center text-2xl md:text-5xl font-serif text-orange-600 ">
+                EDIT PROFILE
+            </div>
+
             <div class="input-con">
                 <label class="label">New Username:</label><br>
                 <input type="text" placeholder="input new username" class="main-input" required v-model="newUsername" @keydown="clearUsernameError">
