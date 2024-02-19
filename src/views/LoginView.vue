@@ -100,7 +100,7 @@
                 <input type="submit" value="Log In" class="main-submit" required>
             </div>
 
-            <div class=" text-blue-700 font-mono text-center py-10 transition duration-1000 ease-out" v-motion-fade-visible>
+            <div class=" text-blue-700 font-mono text-center py-10">
                 <RouterLink :to="{name : 'ForgotPassword'}"> FORGOT PASSWORD </RouterLink>
             </div>
         </form>
