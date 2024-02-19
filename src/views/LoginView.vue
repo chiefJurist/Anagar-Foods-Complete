@@ -84,23 +84,23 @@
 <template>
     <div class="form-con">
         <form @submit.prevent="handleSubmit" class="main-form">
-            <div class="input-con">
+            <div class="input-con" v-motion-slide-visible-right>
                 <label class="label">Username / Email:</label><br>
                 <input type="text" placeholder="input username or email" class="main-input" required v-model="recognition" @keydown="clearError">
                 <div v-if="recognitionError" class=" text-center text-red-600 "> {{ recognitionError }} </div>
             </div>
 
-            <div class="input-con">
+            <div class="input-con" v-motion-slide-visible-left>
                 <label class="label">Password:</label>
                 <input type="password" placeholder="input password" class="main-input" required v-model="password" @keydown="clearError">
                 <div v-if="passwordError"  class=" text-center text-red-600 "> {{ passwordError }} </div>
             </div>
 
-            <div class="submit-con">
+            <div class="submit-con" v-motion-pop-visible>
                 <input type="submit" value="Log In" class="main-submit" required>
             </div>
 
-            <div class=" text-blue-700 font-mono text-center py-10">
+            <div class=" text-blue-700 font-mono text-center py-10 transition duration-1000 ease-out" v-motion-fade-visible>
                 <RouterLink :to="{name : 'ForgotPassword'}"> FORGOT PASSWORD </RouterLink>
             </div>
         </form>
