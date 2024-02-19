@@ -1,12 +1,12 @@
 <template>
     <div class="des-con">
         <!--Image-->
-        <div class=" flex-1 mb-10">
+        <div class=" flex-1 mb-10 transition duration-500 ease-out" v-motion-pop-visible>
             <img src="/img/img-3.jpg" alt="" class=" object-cover rounded-full border-8 border-yellow-500">
         </div>
 
         <!--Description-->
-        <div class=" flex-1">
+        <div class=" flex-1 transition duration-1000 ease-out" v-motion-pop-visible>
             <div class=" card-title ">Anagar Food Delivery Service</div>
             <div class=" para ">
                 Anagar-Foods, your gateway to authentic Nigerian cuisine, delivered in bulk to your doorstep. 

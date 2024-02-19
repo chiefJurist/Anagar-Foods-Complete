@@ -73,7 +73,14 @@ module.exports = {
                 'bg-sm-5': "url('/img/bg-sm-5.png')",
                 'bg-sm-6': "url('/img/bg-sm-6.png')",
                 'food-bg': "url('/img/img-5.jpg')"
+            },
+
+            //Transition
+            transitionDuration: {
+                '1500': '1500ms',
+                '2000': '2000ms',
             }
+                 
         },
     },
     plugins: [],

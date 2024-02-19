@@ -38,11 +38,11 @@
 
 /*ContactView.vue*/
 .input{
-    @apply border border-gray-400 rounded-2xl p-2 md:mr-8 mt-5 w-full;
+    @apply border border-gray-400 rounded-2xl p-2 md:mr-8 mt-5 w-full outline-none;
 }
 
 .contact{
-    @apply lg:flex gap-5 pt-8;
+    @apply lg:flex gap-5 pt-8 transition duration-1500 ease-out;
 }
 
 .contact-head{
@@ -75,7 +75,7 @@
     @apply px-3 mt-40 lg:flex justify-between items-center gap-20;
 }
 .list-style{
-    @apply  shadow-md border-l-4 border-orange-600 my-3 p-3 italic font-bold rounded-md;
+    @apply  shadow-md border-l-4 border-orange-600 my-3 p-3 italic font-bold rounded-md transition duration-1500 ease-out;
 }
 
 
@@ -88,7 +88,7 @@
     @apply bg-white bg-bg-8 bg-no-repeat bg-left-top w-4/5 sm:w-3/4 lg:w-1/2 rounded-lg shadow-lg p-6 sm:p-12;
 }
 .input-con{
-    @apply border border-gray-600 rounded-lg overflow-hidden p-2 lg:p-4 mt-6;
+    @apply border border-gray-600 rounded-lg overflow-hidden p-2 lg:p-4 mt-6 transition duration-1000 ease-out;
 }
 .error{
     @apply text-red-600 text-lg sm:text-2xl text-center;
@@ -100,7 +100,7 @@
     @apply w-full border-none outline-none caret-gray-800 sm:text-xl font-bold p-1 sm:p-3 rounded-lg;
 }
 .submit-con{
-    @apply mt-20 flex justify-center;
+    @apply mt-20 flex justify-center transition duration-1000 ease-out;
 }
 .main-submit{
     @apply bg-gray-500 text-white sm:text-2xl p-2 w-60 rounded-lg hover:bg-gray-300 hover:text-gray-600 transition ease-out duration-500;
