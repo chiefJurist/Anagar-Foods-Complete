@@ -14,7 +14,7 @@
 <template>
     <div>            
         <transition name="slide-fade" mode="in-out">
-            <div v-if="showMenu2" class=" bg-orange-600 text-yellow-300 w-3/4 sm:w-1/3 fixed top-0 h-full">
+            <div v-if="showMenu2" class=" bg-orange-600 text-yellow-300 w-3/4 sm:w-1/3 fixed z-10 top-0 h-full">
                 <div class=" flex justify-end text-4xl border-b-2 border-yellow-300 font-extralight p-5">
                     <button @click="toggle2">X</button>
                 </div>
