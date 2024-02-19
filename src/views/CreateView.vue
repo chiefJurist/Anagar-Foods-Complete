@@ -82,7 +82,7 @@
 
 <template>
     <div class=" flex justify-center py-24 bg-bg-4">
-        <form @submit.prevent="createOrder" action="" class=" w-3/4 shadow-lg border-2 border-orange-600 px-3 sm:py-7 py-10 text-center rounded-lg bg-food-bg text-orange-500">
+        <form @submit.prevent="createOrder" action="" class=" w-3/4 shadow-lg border-2 border-orange-600 px-3 sm:py-7 py-10 text-center rounded-lg bg-food-bg bg-no-repeat bg-cover text-orange-500">
             <div class=" text-2xl md:text-5xl font-serif text-orange-600 mb-12">Create Your Order</div>
 
 
