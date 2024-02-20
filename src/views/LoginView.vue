@@ -84,7 +84,7 @@
 <template>
     <div class="form-con">
         <form @submit.prevent="handleSubmit" class="main-form">
-            <div class="input-con" v-motion-slide-visible-once-right>
+            <div class="input-con" v-motion-slide-visible-once-left>
                 <label class="label">Username / Email:</label><br>
                 <input type="text" placeholder="input username or email" class="main-input" required v-model="recognition" @keydown="clearError">
                 <div v-if="recognitionError" class=" text-center text-red-600 "> {{ recognitionError }} </div>

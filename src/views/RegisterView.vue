@@ -108,7 +108,7 @@
 
             <div class="input-con" v-motion-slide-visible-once-left>
                 <label class="label">Usage: </label>
-                <select class="sm:text-xl font-bold p-1 sm:p-3 rounded-lg w-4/5" required v-model="usage">
+                <select class="sm:text-xl font-bold p-1 sm:p-3 rounded-lg w-4/5 outline-none" required v-model="usage">
                     <option value="Consumer">Consumer</option>
                     <option value="Merchant">Merchant</option>
                 </select>

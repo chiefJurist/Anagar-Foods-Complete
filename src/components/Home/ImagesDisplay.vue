@@ -5,11 +5,11 @@
         </div>
 
         <div>
-            <img src="/img/food-moimoi.jpg" alt="" class=" w-60 rounded-lg lg:w-96 lg:rounded-full transition duration-2000 ease-out" v-motion-slide-visible-left>
+            <img src="/img/food-moimoi.jpg" alt="" class=" w-60 rounded-lg lg:w-96 lg:rounded-full transition duration-2000 ease-out" v-motion-pop-visible>
         </div>
 
         <div>
-            <img src="/img/img-2.jpg" alt="" class=" w-60 rounded-lg lg:w-40 transition duration-1500 ease-out" v-motion-slide-visible-right>
+            <img src="/img/img-2.jpg" alt="" class=" w-60 rounded-lg lg:w-40 transition duration-1500 ease-out" v-motion-pop-visible>
         </div>
         
         <div>
@@ -17,11 +17,11 @@
         </div>
 
         <div>
-            <img src="/img/img-3.jpg" alt="" class=" w-60 rounded-lg lg:w-96 lg:rounded-full transition duration-1500 ease-out" v-motion-slide-visible-left>
+            <img src="/img/img-3.jpg" alt="" class=" w-60 rounded-lg lg:w-96 lg:rounded-full transition duration-1500 ease-out" v-motion-pop-visible>
         </div>
 
         <div class=" lg:flex justify-center lg:pt-11">
-            <img src="/img/img-5.jpg" alt="" class=" w-60 rounded-lg lg:w-20 lg:h-20 transition duration-1500 ease-out" v-motion-slide-visible-right>
+            <img src="/img/img-5.jpg" alt="" class=" w-60 rounded-lg lg:w-20 lg:h-20 transition duration-1500 ease-out" v-motion-pop-visible>
         </div>
 
         <div>
@@ -33,7 +33,7 @@
         </div>
 
         <div class=" lg:flex justify-center lg:pt-20">
-            <img src="/img/img-7.jpg" alt="" class=" w-60 rounded-lg lg:w-32 lg:h-32 transition duration-1500 ease-out" v-motion-slide-visible-right>
+            <img src="/img/img-7.jpg" alt="" class=" w-60 rounded-lg lg:w-32 lg:h-32 transition duration-1500 ease-out" v-motion-pop-visible>
         </div>
 
         <div>

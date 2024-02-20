@@ -6,7 +6,7 @@
         </div>
 
         <!--Description-->
-        <div class=" flex-1 transition duration-1000 ease-out" v-motion-pop-visible>
+        <div class=" flex-1 transition duration-2000 ease-out" v-motion-fade-visible>
             <div class=" card-title ">Anagar Food Delivery Service</div>
             <div class=" para ">
                 Anagar-Foods, your gateway to authentic Nigerian cuisine, delivered in bulk to your doorstep. 
