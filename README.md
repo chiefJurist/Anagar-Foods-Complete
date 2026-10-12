@@ -1,14 +1,13 @@
-# anagar-foods
+# Anagar-foods
 
-This template should help get you started developing with Vue 3 in Vite.
+A web application for restaurant owners built with php, mysql and vue. This was built to experiment building web applications with PHP without Laravel
 
-## Recommended IDE Setup
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur) + [TypeScript Vue Plugin (Volar)](https://marketplace.visualstudio.com/items?itemName=Vue.vscode-typescript-vue-plugin).
+# # Prerequisites
 
-## Customize configuration
-
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+- npm
+- mysql
+- php
 
 ## Project Setup
 
